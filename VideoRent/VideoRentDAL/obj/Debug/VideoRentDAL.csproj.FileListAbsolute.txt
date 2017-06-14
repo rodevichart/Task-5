@@ -1,0 +1,14 @@
+D:\C# Mosh\VideoRent\VideoRentDAL\bin\Debug\VideoRentDAL.dll.config
+D:\C# Mosh\VideoRent\VideoRentDAL\bin\Debug\VideoRentDAL.dll
+D:\C# Mosh\VideoRent\VideoRentDAL\bin\Debug\VideoRentDAL.pdb
+D:\C# Mosh\VideoRent\VideoRentDAL\bin\Debug\EntityFramework.dll
+D:\C# Mosh\VideoRent\VideoRentDAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\C# Mosh\VideoRent\VideoRentDAL\bin\Debug\EntityFramework.xml
+D:\C# Mosh\VideoRent\VideoRentDAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.csprojResolveAssemblyReference.cache
+D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.dll
+D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.pdb
+D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.InitialModel.resources
+D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.csproj.GenerateResource.Cache
+D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.PopulateMemberShip.resources
+D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.AddBirthdateToCustomer.resources

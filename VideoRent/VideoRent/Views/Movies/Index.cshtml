@@ -1,0 +1,18 @@
+﻿@model IList<VideoRent.Models.Movie>
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Movies</h2>
+<table class="table table-striped table-hover">
+    <caption>Movies</caption>   
+    @foreach (var movie in Model)
+    {
+
+        <tr>
+            <td><a href="Movies/Details/@movie.Id">@movie.Name</a></td>
+        </tr>
+    }
+
+</table>
+
