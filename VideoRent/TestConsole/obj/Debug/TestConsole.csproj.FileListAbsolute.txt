@@ -1,0 +1,16 @@
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\TestConsole.exe.config
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\TestConsole.exe
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\TestConsole.pdb
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\EntityFramework.dll
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\EntityFramework.SqlServer.dll
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\VideoRentBL.dll
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\VideoRentDAL.dll
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\AutoMapper.dll
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\VideoRentBL.pdb
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\VideoRentDAL.pdb
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\EntityFramework.xml
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\EntityFramework.SqlServer.xml
+D:\C# Mosh\VideoRent\TestConsole\bin\Debug\AutoMapper.xml
+D:\C# Mosh\VideoRent\TestConsole\obj\Debug\TestConsole.csprojResolveAssemblyReference.cache
+D:\C# Mosh\VideoRent\TestConsole\obj\Debug\TestConsole.exe
+D:\C# Mosh\VideoRent\TestConsole\obj\Debug\TestConsole.pdb

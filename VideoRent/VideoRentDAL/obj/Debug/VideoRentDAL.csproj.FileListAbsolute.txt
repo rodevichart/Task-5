@@ -12,3 +12,8 @@ D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.InitialModel
 D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.csproj.GenerateResource.Cache
 D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.PopulateMemberShip.resources
 D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.AddBirthdateToCustomer.resources
+D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.AddGenreTableAndNewColumnsToMovie.resources
+D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.AddRentalTable.resources
+D:\C# Mosh\VideoRent\VideoRentDAL\bin\Debug\AutoMapper.dll
+D:\C# Mosh\VideoRent\VideoRentDAL\bin\Debug\AutoMapper.xml
+D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.PopulateGenreTable.resources

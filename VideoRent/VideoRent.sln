@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoRent", "VideoRent\Vide
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoRentDAL", "VideoRentDAL\VideoRentDAL.csproj", "{B90CDFB5-F193-4647-95C5-3130D434F039}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoRentBL", "VideoRentBL\VideoRentBL.csproj", "{15D721A2-738B-48E9-9F50-507B8B4853F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{ACBA2936-B0E9-459A-AFA2-27E643F99413}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{B90CDFB5-F193-4647-95C5-3130D434F039}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B90CDFB5-F193-4647-95C5-3130D434F039}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B90CDFB5-F193-4647-95C5-3130D434F039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15D721A2-738B-48E9-9F50-507B8B4853F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15D721A2-738B-48E9-9F50-507B8B4853F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15D721A2-738B-48E9-9F50-507B8B4853F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15D721A2-738B-48E9-9F50-507B8B4853F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACBA2936-B0E9-459A-AFA2-27E643F99413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACBA2936-B0E9-459A-AFA2-27E643F99413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACBA2936-B0E9-459A-AFA2-27E643F99413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACBA2936-B0E9-459A-AFA2-27E643F99413}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

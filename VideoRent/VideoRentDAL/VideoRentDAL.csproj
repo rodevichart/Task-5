@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -54,6 +58,14 @@
     <Compile Include="Core\Domain\Genre.cs" />
     <Compile Include="Core\Domain\MembershipType.cs" />
     <Compile Include="Core\Domain\Movie.cs" />
+    <Compile Include="Core\Domain\Rental.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IMembershipTypeRepository.cs" />
+    <Compile Include="Core\Repositories\IGenreRepository.cs" />
+    <Compile Include="Core\Repositories\ICustomerRepository.cs" />
+    <Compile Include="Core\Repositories\IRentalRepository.cs" />
+    <Compile Include="Core\Repositories\IMovieRepository.cs" />
+    <Compile Include="Core\Repositories\IRepository.cs" />
     <Compile Include="Migrations\201706141754454_InitialModel.cs" />
     <Compile Include="Migrations\201706141754454_InitialModel.Designer.cs">
       <DependentUpon>201706141754454_InitialModel.cs</DependentUpon>
@@ -70,11 +82,26 @@
     <Compile Include="Migrations\201706141838187_AddGenreTableAndNewColumnsToMovie.Designer.cs">
       <DependentUpon>201706141838187_AddGenreTableAndNewColumnsToMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706151404462_AddRentalTable.cs" />
+    <Compile Include="Migrations\201706151404462_AddRentalTable.Designer.cs">
+      <DependentUpon>201706151404462_AddRentalTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706151738588_PopulateGenreTable.cs" />
+    <Compile Include="Migrations\201706151738588_PopulateGenreTable.Designer.cs">
+      <DependentUpon>201706151738588_PopulateGenreTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\EntityConfigurations\CustomerConfigurations.cs" />
     <Compile Include="Persistence\EntityConfigurations\GenreConfigurations.cs" />
     <Compile Include="Persistence\EntityConfigurations\MembershipConfigurations.cs" />
     <Compile Include="Persistence\EntityConfigurations\MovieConfigurations.cs" />
+    <Compile Include="Persistence\Repositories\CustomerRepository.cs" />
+    <Compile Include="Persistence\Repositories\GenreRepository.cs" />
+    <Compile Include="Persistence\Repositories\MembershipTypeRepository.cs" />
+    <Compile Include="Persistence\Repositories\RentalRepository.cs" />
+    <Compile Include="Persistence\Repositories\MovieRepository.cs" />
+    <Compile Include="Persistence\Repositories\Repository.cs" />
+    <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Persistence\VideoRentContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -94,6 +121,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706141838187_AddGenreTableAndNewColumnsToMovie.resx">
       <DependentUpon>201706141838187_AddGenreTableAndNewColumnsToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706151404462_AddRentalTable.resx">
+      <DependentUpon>201706151404462_AddRentalTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706151738588_PopulateGenreTable.resx">
+      <DependentUpon>201706151738588_PopulateGenreTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
