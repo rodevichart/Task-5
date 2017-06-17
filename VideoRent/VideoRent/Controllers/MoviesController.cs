@@ -26,7 +26,8 @@ namespace VideoRent.Controllers
             var genreListView = Mapper.Map<IEnumerable<GenreDto>,IEnumerable<Genre>>(VideoRentCore.UnitService.GenreService.GetAll()); 
             var viewModel = new MovieFormViewModel
             {
-                Genres = genreListView
+                Genres = genreListView,
+                Movie = new Movie()
             };
 
             return View("MovieForm",viewModel);
@@ -66,9 +67,20 @@ namespace VideoRent.Controllers
             return View("MovieForm",viewModel);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
-            if (movie.Id == 0)
+            if (!ModelState.IsValid)
+            {
+                var view = new MovieFormViewModel
+                {
+                    Movie = movie,
+                    Genres = Mapper.Map<IEnumerable<GenreDto>, IEnumerable<Genre>>(VideoRentCore.UnitService.GenreService.GetAll())
+                };
+                return View("MovieForm", view);
+            }
+            if (movie.Id == null)
             {
                 movie.DateAdded = DateTime.Now;
                 VideoRentCore.UnitService.MovieService.Add(Mapper.Map<Movie, MovieDto>(movie));

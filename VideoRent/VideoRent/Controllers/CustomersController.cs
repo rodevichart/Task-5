@@ -28,25 +28,40 @@ namespace VideoRent.Controllers
 
             var viewModel = new CustomerFormViewModel
             {
-                MembershipTypes = membershipTypeListView
+                MembershipTypes = membershipTypeListView,
+                Customer = new Customer()
             };
             return View("CustomerForm",viewModel);
         }
 
 
         [HttpPost]
-        public ActionResult Save(CustomerFormViewModel customerFormViewModel )
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(CustomerFormViewModel customerFormViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                var veiwModel = new CustomerFormViewModel
+                {
+                    Customer = customerFormViewModel.Customer,
+                    MembershipTypes =
+                        Mapper.Map<IEnumerable<MembershipTypeDto>, IEnumerable<MembershipType>>(
+                            VideoRentCore.UnitService.MembershipTypeService.GetAll())
+                };
+                return View("CustomerForm", veiwModel);
+            }
+
             if (customerFormViewModel.Customer.Id == 0)
-                VideoRentCore.UnitService.CustomerService.Add(Mapper.Map<Customer, CustomerDto>(customerFormViewModel.Customer));
+                VideoRentCore.UnitService.CustomerService.Add(
+                    Mapper.Map<Customer, CustomerDto>(customerFormViewModel.Customer));
             else
             {
                 var customer = VideoRentCore.UnitService.CustomerService.SingleOrDefault(
                     c => c.Id == customerFormViewModel.Customer.Id);
-                            VideoRentCore.UnitService.CustomerService.Update(Mapper.Map(customerFormViewModel.Customer, customer));                
+                VideoRentCore.UnitService.CustomerService.Update(Mapper.Map(customerFormViewModel.Customer, customer));
             }
-            
-            
+
+
             return RedirectToAction("Index", "Customers");
         }
 
