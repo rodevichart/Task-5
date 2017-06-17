@@ -18,5 +18,8 @@ namespace VideoRentDAL.Core.Repositories
 
         void Remove(TEntity entity);
         void RemoveRange(IEnumerable<TEntity> entities);
+
+        void Update(TEntity entityToUpdate);
+
     }
 }

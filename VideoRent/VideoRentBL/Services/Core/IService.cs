@@ -16,5 +16,6 @@ namespace VideoRentBL.Services.Core
         void AddRange(IList<TDto> dtoObjs);
         void Remove(TDto dtoObj);
         void RemoveRange(IEnumerable<TDto> dtoObjs);
+        void Update(TDto dtoObj);
     }
 }

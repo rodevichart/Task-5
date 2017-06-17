@@ -1,6 +1,6 @@
-﻿namespace VideoRentBL.DTOs
+﻿namespace VideoRent.Models
 {
-    public class GenreDto
+    public class Genre
     {
         public int Id { get; set; }
         public string Name { get; set; }

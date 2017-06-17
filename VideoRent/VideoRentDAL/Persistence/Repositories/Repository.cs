@@ -60,5 +60,11 @@ namespace VideoRentDAL.Persistence.Repositories
         {
             _entities.RemoveRange(entities);
         }
+
+        public void Update(TEntity entityToUpdate)
+        {
+            //_entities.Attach(entityToUpdate);
+            //Context.Entry(entityToUpdate).State = EntityState.Modified;
+        }      
     }
 }

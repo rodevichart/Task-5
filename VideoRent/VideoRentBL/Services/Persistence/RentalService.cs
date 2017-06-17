@@ -16,7 +16,7 @@ namespace VideoRentBL.Services.Persistence
             _videoRent = unitOfWork;
         }
 
-        public IList<RentalDto> GetAllRentalsWhithCustomersMoviesNMembershipType(int pageIndex, int pageSize = 10)
+        public IList<RentalDto> GetAllRentalsWhithCustomersMoviesNMembershipType(int pageIndex = 1, int pageSize = 10)
         {
            return Mapper.Map<IList<Rental>, IList<RentalDto>>(_videoRent.RentalRepository.GetAllRentalsWhithCustomersMoviesNMembershipType(pageIndex,pageSize));
         }

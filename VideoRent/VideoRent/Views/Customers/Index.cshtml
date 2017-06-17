@@ -1,12 +1,19 @@
-﻿@model IEnumerable<VideoRent.Models.Customer>
+﻿@model IList<VideoRent.Models.Customer>
 @{
     ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Customers</h2>
+@Html.ActionLink("New Customer", "New", "Customers", null, new { @class = "btn btn-primary" })
 <table class="table table-striped table-hover">
-    <caption>Customers</caption>
+    <thead>
+
+        <tr>
+            <th>Customer</th>
+            <th>Membership Type</th>
+        </tr>
+    </thead>
     @if (!Model.Any())
     {
         <p>We Don`t have any Customers yet.</p>
@@ -17,7 +24,10 @@
         {
 
             <tr>
-                <td><a href="Customers/Details/@customer.Id">@customer.Name</a></td>
+                <td><a href="Customers/Edit/@customer.Id">@customer.Name</a></td>
+
+
+                <td>@customer.MembershipType.Name</td>
             </tr>
         }
     }

@@ -67,3 +67,9 @@ D:\C# Mosh\VideoRent\VideoRent\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\C# Mosh\VideoRent\VideoRent\obj\Debug\VideoRent.csprojResolveAssemblyReference.cache
 D:\C# Mosh\VideoRent\VideoRent\obj\Debug\VideoRent.dll
 D:\C# Mosh\VideoRent\VideoRent\obj\Debug\VideoRent.pdb
+D:\C# Mosh\VideoRent\VideoRent\bin\AutoMapper.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\VideoRentBL.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\VideoRentDAL.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\VideoRentBL.pdb
+D:\C# Mosh\VideoRent\VideoRent\bin\AutoMapper.xml
+D:\C# Mosh\VideoRent\VideoRent\bin\VideoRentDAL.pdb

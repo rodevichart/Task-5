@@ -18,7 +18,7 @@ namespace VideoRentDAL.Persistence.Repositories
         {
             return VideoRentContext.Rentals
                 .Include(r => r.Customer)
-                .Include(r => r.Movie)
+                .Include(r => r.Movie)                
                 .OrderBy(r => r.Customer.Name)
                 .Skip((pageIndex - 1) * pageSize)
                 .Take(pageSize)

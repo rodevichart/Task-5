@@ -100,5 +100,12 @@ namespace VideoRentBL.Services.Persistence
             _unitOfWork.Complete();
             Mutex.ReleaseMutex();
         }
+
+        public void Update(TDto dtoObj)
+        {
+            var t = Mapper.Map<TDto, T>(dtoObj);
+            Repository.Update(t);
+            _unitOfWork.Complete();
+        }
     }
 }

@@ -34,6 +34,10 @@
       <HintPath>..\packages\AutoMapper.6.1.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +54,7 @@
     <Compile Include="DTOs\MovieDto.cs" />
     <Compile Include="DTOs\RentalDto.cs" />
     <Compile Include="MappingProfile.cs" />
+    <Compile Include="Persistence\VideoRentCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Core\IMembershipTypeService.cs" />
     <Compile Include="Services\Core\IGenreService.cs" />
@@ -74,6 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
