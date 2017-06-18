@@ -4,9 +4,7 @@ using System.Linq.Expressions;
 
 namespace VideoRentBL.Services.Core
 {
-    public interface IService<T, TDto>
-        where T : class
-        where TDto : class
+    public interface IService<TDto> where TDto : class
     {
         TDto Get(int id);
         IEnumerable<TDto> GetAll();
@@ -14,7 +12,7 @@ namespace VideoRentBL.Services.Core
         TDto SingleOrDefault(Expression<Func<TDto, bool>> predicate);
         void Add(TDto dtoObj);
         void AddRange(IList<TDto> dtoObjs);
-        void Remove(TDto dtoObj);
+        void Remove(int id);
         void RemoveRange(IEnumerable<TDto> dtoObjs);
         void Update(TDto dtoObj);
     }

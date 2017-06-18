@@ -10,17 +10,18 @@ using VideoRentDAL.Core.Repositories;
 
 namespace VideoRentBL.Services.Persistence
 {
-    public class Service<T, TDto> : IService<T, TDto>
+    public abstract class Service<T, TDto> : IService<TDto>
         where T : class
         where TDto : class
     {
         protected readonly IRepository<T> Repository;
-        private readonly IUnitOfWork _unitOfWork;
+        protected readonly IUnitOfWork UnitOfWork;
         private static readonly Mutex Mutex = new Mutex();
-        public Service(IUnitOfWork unitOfWork, IRepository<T> repository)
+
+        protected Service(IUnitOfWork unitOfWork, IRepository<T> repository)
         {
             Repository = repository;
-            _unitOfWork = unitOfWork;
+            UnitOfWork = unitOfWork;
         }
 
         public TDto Get(int id)
@@ -65,7 +66,7 @@ namespace VideoRentBL.Services.Persistence
             var dto = Mapper.Map<TDto, T>(dtoObj);
             Mutex.WaitOne();
             Repository.Add(dto);
-            _unitOfWork.Complete();
+            UnitOfWork.Complete();
             Mutex.ReleaseMutex();
 
 
@@ -76,18 +77,18 @@ namespace VideoRentBL.Services.Persistence
             var dto = Mapper.Map<IList<TDto>, IList<T>>(dtoObjs);
             Mutex.WaitOne();
             Repository.AddRange(dto);
-            _unitOfWork.Complete();
+            UnitOfWork.Complete();
             Mutex.ReleaseMutex();
 
         }
 
 
-        public void Remove(TDto dtoObj)
+        public void Remove(int id)
         {
-            var dto = Mapper.Map<TDto, T>(dtoObj);
+           // var dto = Mapper.Map<TDto, T>(dtoObj);
             Mutex.WaitOne();
-            Repository.Remove(dto);
-            _unitOfWork.Complete();
+            Repository.Remove(id);
+            UnitOfWork.Complete();
             Mutex.ReleaseMutex();
 
         }
@@ -97,7 +98,7 @@ namespace VideoRentBL.Services.Persistence
             var dto = Mapper.Map<IEnumerable<TDto>, IEnumerable<T>>(dtoObjs);
             Mutex.WaitOne();
             Repository.RemoveRange(dto);
-            _unitOfWork.Complete();
+            UnitOfWork.Complete();
             Mutex.ReleaseMutex();
         }
 
@@ -105,7 +106,7 @@ namespace VideoRentBL.Services.Persistence
         {
             var t = Mapper.Map<TDto, T>(dtoObj);
             Repository.Update(t);
-            _unitOfWork.Complete();
+            UnitOfWork.Complete();
         }
     }
 }

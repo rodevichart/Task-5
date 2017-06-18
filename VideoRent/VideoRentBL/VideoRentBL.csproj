@@ -38,6 +38,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,7 +58,7 @@
     <Compile Include="DTOs\MovieDto.cs" />
     <Compile Include="DTOs\RentalDto.cs" />
     <Compile Include="MappingProfile.cs" />
-    <Compile Include="Persistence\VideoRentCore.cs" />
+    <Compile Include="NinjectBLModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Core\IMembershipTypeService.cs" />
     <Compile Include="Services\Core\IGenreService.cs" />

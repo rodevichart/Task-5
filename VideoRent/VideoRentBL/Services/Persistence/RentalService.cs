@@ -8,7 +8,7 @@ using VideoRentDAL.Core.Repositories;
 
 namespace VideoRentBL.Services.Persistence
 {
-    public class RentalService : Service<Rental,RentalDto>,IRentalService
+    public class RentalService : Service<Rental, RentalDto>, IRentalService
     {
         private readonly IUnitOfWork _videoRent;
         public RentalService(IUnitOfWork unitOfWork, IRepository<Rental> repository) : base(unitOfWork, repository)
