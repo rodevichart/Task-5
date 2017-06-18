@@ -15,7 +15,12 @@ namespace VideoRent
         protected void Application_Start()
         {
             //Mapper.Initialize(c => c.AddProfile<MappingProfile>());
-            Mapper.Initialize(c => c.AddProfile<MappingProfileMVC>());
+            Mapper.Initialize(c =>
+            {
+                c.AddProfile<MappingProfileMVC>();
+                c.AddProfile<MappingProfile>();
+
+            });
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -51,9 +51,14 @@ namespace VideoRentDAL.Persistence.Repositories
 
 
 
-        public void Remove(TEntity entity)
+        public void Remove(int id)
         {
-            _entities.Remove(entity);
+            var item = Get(id);
+            if (item != null)
+            {
+                _entities.Remove(item);
+            }
+
         }
 
         public void RemoveRange(IEnumerable<TEntity> entities)
@@ -63,8 +68,9 @@ namespace VideoRentDAL.Persistence.Repositories
 
         public void Update(TEntity entityToUpdate)
         {
+            if (entityToUpdate != null)
+                Context.Entry(entityToUpdate).State = EntityState.Modified;
             //_entities.Attach(entityToUpdate);
-            //Context.Entry(entityToUpdate).State = EntityState.Modified;
-        }      
+        }
     }
 }

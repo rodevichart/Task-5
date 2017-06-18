@@ -8,8 +8,8 @@ namespace VideoRentDAL.Persistence
     public class VideoRentContext : DbContext
     {
 
-        public VideoRentContext()
-            : base(ConfigurationManager.ConnectionStrings["VideoR"].ConnectionString)
+        public VideoRentContext(string connString)
+            : base(connString)
         {
             this.Configuration.LazyLoadingEnabled = false;
         }

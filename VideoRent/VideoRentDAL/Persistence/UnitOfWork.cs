@@ -8,9 +8,9 @@ namespace VideoRentDAL.Persistence
     {
         private readonly VideoRentContext _context;
 
-        public UnitOfWork(VideoRentContext context)
+        public UnitOfWork(string connString)
         {
-            _context = context;
+            _context = new VideoRentContext(connString);
             MoviesRepository = new MovieRepository(_context);
             CustomersRepository = new CustomerRepository(_context);
             MembershipTypeRepository = new MembershipTypeRepository(_context);
