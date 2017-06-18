@@ -1,29 +1,23 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
 using VideoRent.Models;
 using VideoRent.ViewModels;
 using VideoRentBL.DTOs;
-using VideoRentBL.Persistence;
+using VideoRentBL.Services.Core;
 
 namespace VideoRent.Controllers
 {
-    public class MoviesController : Controller
+    public class MoviesController : AbastractController
     {
-        private VideoRentCore VideoRentCore { get; set; }
-
-        public MoviesController()
+        public MoviesController(IUnitOfWorkService logic) : base(logic)
         {
-            VideoRentCore = new VideoRentCore();
         }
 
         public ActionResult New()
         {
-            var genreListView = Mapper.Map<IEnumerable<GenreDto>,IEnumerable<Genre>>(VideoRentCore.UnitService.GenreService.GetAll()); 
+            var genreListView = Mapper.Map<IEnumerable<GenreDto>,IEnumerable<Genre>>(Logic.GenreService.GetAll()); 
             var viewModel = new MovieFormViewModel
             {
                 Genres = genreListView,
@@ -37,7 +31,7 @@ namespace VideoRent.Controllers
         // [Route("movies")]
         public ActionResult Index()
         {
-            var movieList = VideoRentCore.UnitService.MovieService.GetCustomersWithMembershipTypeNBirthdate();
+            var movieList = Logic.MovieService.GetCustomersWithMembershipTypeNBirthdate();
             var view = Mapper.Map<IList<MovieDto>, IList<Movie>>(movieList);
             return View(view);
         }
@@ -45,7 +39,7 @@ namespace VideoRent.Controllers
         //[Route("movies/details/{id:regex(\\d{4})}")]
         public ActionResult Details(int id)
         {
-            var selected = VideoRentCore.UnitService.MovieService.GetCustomerWithMembershipTypeNBirthdate(id);
+            var selected = Logic.MovieService.GetCustomerWithMembershipTypeNBirthdate(id);
             var view = Mapper.Map<MovieDto, Movie>(selected);
             if (view == null)
                 return HttpNotFound();
@@ -55,14 +49,14 @@ namespace VideoRent.Controllers
         public ActionResult Edit(int id)
         {
             var movie =
-                Mapper.Map<MovieDto, Movie>(VideoRentCore.UnitService.MovieService.SingleOrDefault(c => c.Id == id));
+                Mapper.Map<MovieDto, Movie>(Logic.MovieService.SingleOrDefault(c => c.Id == id));
 
             if (movie == null)
                 return HttpNotFound();
             var viewModel = new MovieFormViewModel
             {
                 Movie = movie,
-                Genres =  Mapper.Map<IEnumerable<GenreDto>, IEnumerable<Genre>>(VideoRentCore.UnitService.GenreService.GetAll())
+                Genres =  Mapper.Map<IEnumerable<GenreDto>, IEnumerable<Genre>>(Logic.GenreService.GetAll())
             };
             return View("MovieForm",viewModel);
         }
@@ -76,20 +70,19 @@ namespace VideoRent.Controllers
                 var view = new MovieFormViewModel
                 {
                     Movie = movie,
-                    Genres = Mapper.Map<IEnumerable<GenreDto>, IEnumerable<Genre>>(VideoRentCore.UnitService.GenreService.GetAll())
+                    Genres = Mapper.Map<IEnumerable<GenreDto>, IEnumerable<Genre>>(Logic.GenreService.GetAll())
                 };
                 return View("MovieForm", view);
             }
             if (movie.Id == null)
             {
                 movie.DateAdded = DateTime.Now;
-                VideoRentCore.UnitService.MovieService.Add(Mapper.Map<Movie, MovieDto>(movie));
+                Logic.MovieService.Add(Mapper.Map<Movie, MovieDto>(movie));
             }
                
             else
             {
-                var updateMovie = VideoRentCore.UnitService.MovieService.SingleOrDefault(m => m.Id == movie.Id);
-                VideoRentCore.UnitService.MovieService.Update(Mapper.Map(movie, updateMovie));
+                Logic.MovieService.Update(Mapper.Map<Movie, MovieDto>(movie));
             }
             return RedirectToAction("Index", "Movies");
         }
