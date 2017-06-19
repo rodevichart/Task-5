@@ -14,3 +14,4 @@ D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.PopulateGenr
 D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.csproj.GenerateResource.Cache
 D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.dll
 D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.pdb
+D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.csprojResolveAssemblyReference.cache

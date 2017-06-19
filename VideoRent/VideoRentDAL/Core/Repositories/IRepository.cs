@@ -21,5 +21,6 @@ namespace VideoRentDAL.Core.Repositories
 
         void Update(TEntity entityToUpdate);
 
+
     }
 }

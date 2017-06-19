@@ -13,7 +13,7 @@ namespace VideoRentDAL.Persistence.Repositories
         }
 
         public VideoRentContext VideoRentContext => Context as VideoRentContext;
-        public List<Movie> GetCustomersWithMembershipTypeNBirthdate(int pageIndex = 1, int pageSize = 10)
+        public List<Movie> GetCustomersWithMembershipTypeNBirthdate(int pageIndex = 1, int pageSize = 15)
         {
             
                 return VideoRentContext.Movies

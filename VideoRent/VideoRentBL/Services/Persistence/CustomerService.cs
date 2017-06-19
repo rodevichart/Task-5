@@ -16,9 +16,11 @@ namespace VideoRentBL.Services.Persistence
             _videoRent = unitOfWork;
         }
 
-        public IList<CustomerDto> GetCustomersWithMembershipTypeNBirthdate(int pageIndex = 1, int pageSize = 10)
+        public IList<CustomerDto> GetCustomersWithMembershipTypeNBirthdate(string search, int orderColm, string orderDir, out int totalRecords, out int recordsSearched, int pageIndex = 1, int pageSize = 10)
         {
-            return Mapper.Map<IList<Customer>, IList<CustomerDto>>(_videoRent.CustomersRepository.GetCustomersWithMembershipTypeNBirthdate(pageIndex,pageSize));
+           
+            return Mapper.Map<IList<Customer>, IList<CustomerDto>>
+                (_videoRent.CustomersRepository.GetCustomersWithMembershipTypeNBirthdate(search, orderColm, orderDir, out totalRecords, out recordsSearched, pageIndex,pageSize));
         }
 
         public CustomerDto GetCustomerWithMembershipTypeNBirthdate(int id)
