@@ -2,7 +2,7 @@
 
 namespace VideoRentBL.DTOs
 {
-    public class MovieDto
+    public class MovieDto : IComparable<MovieDto>
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -11,5 +11,13 @@ namespace VideoRentBL.DTOs
         public DateTime DateAdded { get; set; }
         public DateTime ReleaseDate { get; set; }
         public byte NumberInStock { get; set; }
+        public int CompareTo(MovieDto movie)
+        {
+            if (this.Id == movie.Id)
+            {
+                return this.Name.CompareTo(movie.Name);
+            }
+            return movie.Id.CompareTo(this.Id);
+        }
     }
 }

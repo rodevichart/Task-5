@@ -24,5 +24,14 @@ namespace VideoRentDAL.Persistence.Repositories
                 .Take(pageSize)
                 .ToList();
         }
+
+        public IList<Rental> GetAllRentalsWhithCustomersMoviesNMembershipType()
+        {
+            return VideoRentContext.Rentals
+                 .Include(r => r.Customer)
+                 .Include(r => r.Movie)
+                 .OrderBy(r => r.Customer.Name)
+                 .ToList();
+        }
     }
 }

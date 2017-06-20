@@ -1,6 +1,7 @@
 using System.Configuration;
 using Ninject.Modules;
 using VideoRentBL;
+using VideoRentBL.RoutingSolutiongConfigs;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(VideoRent.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(VideoRent.App_Start.NinjectWebCommon), "Stop")]
