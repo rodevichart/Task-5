@@ -55,8 +55,8 @@ namespace VideoRent
             //   consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+              // appId: "304781629978452",
+               //appSecret: "56c9d5dddaa5d869bf0d939efbc50db6");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

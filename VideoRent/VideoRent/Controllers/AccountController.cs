@@ -286,7 +286,7 @@ namespace VideoRent.Controllers
         //
         // POST: /Account/ExternalLogin
         [HttpPost]
-        [Authorize(Roles = RoleName.CanManageMoviesCustomers)]
+        //[Authorize(Roles = RoleName.CanManageMoviesCustomers)]
         [ValidateAntiForgeryToken]
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
@@ -379,7 +379,11 @@ namespace VideoRent.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email, Email = model.Email,DrivingLicense = model.DrivingLicense
+                        
+                };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

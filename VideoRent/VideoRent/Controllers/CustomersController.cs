@@ -23,14 +23,15 @@ namespace VideoRent.Controllers
         public ActionResult New()
         {
             var membershipTypeList = Logic.MembershipTypeService.GetAll();
-            var membershipTypeListView = Mapper.Map<IEnumerable<MembershipTypeDto>, IEnumerable<MembershipType>>(membershipTypeList);
+            var membershipTypeListView =
+                Mapper.Map<IEnumerable<MembershipTypeDto>, IEnumerable<MembershipType>>(membershipTypeList);
 
             var viewModel = new CustomerFormViewModel
             {
                 MembershipTypes = membershipTypeListView,
                 Customer = new Customer()
             };
-            return View("CustomerForm",viewModel);
+            return View("CustomerForm", viewModel);
         }
 
 
@@ -56,7 +57,7 @@ namespace VideoRent.Controllers
                     Mapper.Map<Customer, CustomerDto>(customerFormViewModel.Customer));
             else
             {
-                Logic.CustomerService.Update(Mapper.Map<Customer,CustomerDto>(customerFormViewModel.Customer));
+                Logic.CustomerService.Update(Mapper.Map<Customer, CustomerDto>(customerFormViewModel.Customer));
             }
 
 
@@ -69,30 +70,31 @@ namespace VideoRent.Controllers
         public ActionResult Index()
         {
             if (User.IsInRole(RoleName.CanManageMoviesCustomers))
-                return View("Index");           
-                return View("ReadOnlyList");
+                return View("List");
+            return View("ReadOnlyList");
         }
 
         [HttpPost]
         public ActionResult Index(int? draw, int? start, int? length)
-        {         
+        {
             var totalRecords = 0;
             var recordsSearched = 0;
             var orderColm = 0;
-            
+
             int.TryParse(Request.Form.GetValues("order[0][column]")?.ElementAtOrDefault(0), out orderColm);
             var orderDir = Request.Form.GetValues("order[0][dir]")?.ElementAtOrDefault(0);
-            var search = Request["search[value]"];            
+            var search = Request["search[value]"];
             start = start.HasValue ? start/10 : 0;
-            var customerList = 
-                Logic.CustomerService.GetCustomersWithMembershipTypeNBirthdate(search, orderColm, orderDir, out totalRecords, out recordsSearched, start.Value, length ?? 10);
+            var customerList =
+                Logic.CustomerService.GetCustomersWithMembershipTypeNBirthdate(search, orderColm, orderDir,
+                    out totalRecords, out recordsSearched, start.Value, length ?? 10);
             var view = Mapper.Map<IList<CustomerDto>, IList<Customer>>(customerList);
 
             var json = (new CamelCaseResolver
             {
-                Data = new { draw = draw, recordsFiltered = recordsSearched, recordsTotal = totalRecords, data = view },
+                Data = new {draw = draw, recordsFiltered = recordsSearched, recordsTotal = totalRecords, data = view},
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
-            });          
+            });
             return json;
         }
 
@@ -118,10 +120,12 @@ namespace VideoRent.Controllers
             var viewModel = new CustomerFormViewModel
             {
                 Customer = customer,
-                MembershipTypes = Mapper.Map<IEnumerable<MembershipTypeDto>,IEnumerable<MembershipType>>(Logic.MembershipTypeService.GetAll())
-            }; 
+                MembershipTypes =
+                    Mapper.Map<IEnumerable<MembershipTypeDto>, IEnumerable<MembershipType>>(
+                        Logic.MembershipTypeService.GetAll())
+            };
 
-            return View("CustomerForm",viewModel);
+            return View("CustomerForm", viewModel);
         }
 
         // POST: Customers/Delete/id

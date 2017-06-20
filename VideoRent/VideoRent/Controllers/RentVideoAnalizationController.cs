@@ -7,6 +7,7 @@ using VideoRentBL.Services.Core;
 
 namespace VideoRent.Controllers
 {
+    [Authorize(Roles = RoleName.CanManageMoviesCustomers)]
     public class RentVideoAnalizationController : AbastractController
     {
         public RentVideoAnalizationController(IUnitOfWorkService logic) : base(logic)
@@ -15,8 +16,7 @@ namespace VideoRent.Controllers
         // GET: RentVideoAnalization
         public ActionResult Index()
         {
-            var rentalList = Logic.RentalService.GetAllRentalsWhithCustomersMoviesNMembershipType(1);
-            //var addMembershipType = rentalList.ForEach(r => r.Customer.MembershipType.Name = )
+            var rentalList = Logic.RentalService.GetAllRentalsWhithCustomersMoviesNMembershipType(1);          
             var view = Mapper.Map<IList<RentalDto>, IList<Rental>>(rentalList);
             return View(view);
         }

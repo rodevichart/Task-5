@@ -13,7 +13,10 @@
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
                 <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
-                <li>@Html.ActionLink("Rental Analization", "Index", "RentVideoAnalization")</li>
+                @if (User.IsInRole(RoleName.CanManageMoviesCustomers))
+                { <li>@Html.ActionLink("Rental Analization", "Index", "RentVideoAnalization")</li>}
+
+                
             </ul>
 
             @(this.User.IsInRole(RoleName.CanManageMoviesCustomers) ? Html.Partial("_LoginPartialManager") : Html.Partial("_LoginPartial"))
