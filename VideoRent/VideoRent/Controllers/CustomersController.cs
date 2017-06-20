@@ -19,7 +19,7 @@ namespace VideoRent.Controllers
         {
         }
 
-
+        [Authorize(Roles = RoleName.CanManageMoviesCustomers)]
         public ActionResult New()
         {
             var membershipTypeList = Logic.MembershipTypeService.GetAll();
@@ -34,6 +34,7 @@ namespace VideoRent.Controllers
         }
 
 
+        [Authorize(Roles = RoleName.CanManageMoviesCustomers)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(CustomerFormViewModel customerFormViewModel)
@@ -66,13 +67,15 @@ namespace VideoRent.Controllers
         //[Route("customers")]        
         [HttpGet]
         public ActionResult Index()
-        {         
-            return View();
+        {
+            if (User.IsInRole(RoleName.CanManageMoviesCustomers))
+                return View("Index");           
+                return View("ReadOnlyList");
         }
 
         [HttpPost]
         public ActionResult Index(int? draw, int? start, int? length)
-        {
+        {         
             var totalRecords = 0;
             var recordsSearched = 0;
             var orderColm = 0;
@@ -105,6 +108,7 @@ namespace VideoRent.Controllers
         }
 
         // GET: Customers/Edit/id
+        [Authorize(Roles = RoleName.CanManageMoviesCustomers)]
         public ActionResult Edit(int id)
         {
             var customer = Mapper.Map<CustomerDto, Customer>(Logic.CustomerService.SingleOrDefault(c => c.Id == id));
@@ -122,6 +126,7 @@ namespace VideoRent.Controllers
 
         // POST: Customers/Delete/id
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageMoviesCustomers)]
         public HttpStatusCode Delete(int id)
         {
             var customer = Logic.CustomerService.SingleOrDefault(c => c.Id == id);
