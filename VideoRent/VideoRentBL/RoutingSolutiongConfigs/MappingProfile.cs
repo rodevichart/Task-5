@@ -2,7 +2,7 @@
 using VideoRentBL.DTOs;
 using VideoRentDAL.Core.Domain;
 
-namespace VideoRentBL
+namespace VideoRentBL.RoutingSolutiongConfigs
 {
     public class MappingProfile:Profile
     {

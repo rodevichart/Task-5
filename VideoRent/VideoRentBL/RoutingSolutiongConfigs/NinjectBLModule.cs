@@ -2,7 +2,7 @@
 using VideoRentDAL.Core;
 using VideoRentDAL.Persistence;
 
-namespace VideoRentBL
+namespace VideoRentBL.RoutingSolutiongConfigs
 {
     public class NinjectBLModule : NinjectModule
     {
