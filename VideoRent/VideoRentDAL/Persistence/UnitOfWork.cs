@@ -8,21 +8,37 @@ namespace VideoRentDAL.Persistence
     {
         private readonly VideoRentContext _context;
 
+        private ICustomerRepository _customerRepository;
+
+        private IGenreRepository _genreRepository;
+
+        private IMembershipTypeRepository _membershipTypeRepository;
+
+        private IMovieRepository _movieMovieRepository;
+
+        private IRentalRepository _rentalRepository;
+
+
         public UnitOfWork(string connString)
         {
             _context = new VideoRentContext(connString);
-            MoviesRepository = new MovieRepository(_context);
-            CustomersRepository = new CustomerRepository(_context);
-            MembershipTypeRepository = new MembershipTypeRepository(_context);
-            RentalRepository = new RentalRepository(_context);
-            GenreRepository = new GenreRepository(_context);
+            
         }
 
-        public IMovieRepository MoviesRepository { get; }
-        public ICustomerRepository CustomersRepository { get; }
-        public IMembershipTypeRepository MembershipTypeRepository { get; }
-        public IRentalRepository RentalRepository { get; }
-        public IGenreRepository GenreRepository { get; }
+        public IMovieRepository MoviesRepository => _movieMovieRepository ??
+                                                   (_movieMovieRepository = new MovieRepository(_context));
+
+        public ICustomerRepository CustomersRepository => _customerRepository ??
+                                                   (_customerRepository = new CustomerRepository(_context));
+
+        public IMembershipTypeRepository MembershipTypeRepository => _membershipTypeRepository ??
+                                                   (_membershipTypeRepository = new MembershipTypeRepository(_context));
+
+        public IRentalRepository RentalRepository => _rentalRepository ??
+                                                   (_rentalRepository = new RentalRepository(_context));
+
+        public IGenreRepository GenreRepository => _genreRepository ??
+                                                   (_genreRepository = new GenreRepository(_context));
 
         public int Complete()
         {

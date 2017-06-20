@@ -11,3 +11,16 @@ D:\C# Mosh\VideoRent\VideoRentBL\obj\Debug\VideoRentBL.dll
 D:\C# Mosh\VideoRent\VideoRentBL\obj\Debug\VideoRentBL.pdb
 D:\C# Mosh\VideoRent\VideoRentBL\bin\Debug\Ninject.dll
 D:\C# Mosh\VideoRent\VideoRentBL\bin\Debug\Ninject.xml
+D:\C#\Task#5\VideoRent\VideoRentBL\bin\Debug\VideoRentBL.dll
+D:\C#\Task#5\VideoRent\VideoRentBL\bin\Debug\VideoRentBL.pdb
+D:\C#\Task#5\VideoRent\VideoRentBL\bin\Debug\AutoMapper.dll
+D:\C#\Task#5\VideoRent\VideoRentBL\bin\Debug\EntityFramework.dll
+D:\C#\Task#5\VideoRent\VideoRentBL\bin\Debug\Ninject.dll
+D:\C#\Task#5\VideoRent\VideoRentBL\bin\Debug\VideoRentDAL.dll
+D:\C#\Task#5\VideoRent\VideoRentBL\bin\Debug\VideoRentDAL.pdb
+D:\C#\Task#5\VideoRent\VideoRentBL\bin\Debug\AutoMapper.xml
+D:\C#\Task#5\VideoRent\VideoRentBL\bin\Debug\EntityFramework.xml
+D:\C#\Task#5\VideoRent\VideoRentBL\bin\Debug\Ninject.xml
+D:\C#\Task#5\VideoRent\VideoRentBL\obj\Debug\VideoRentBL.csprojResolveAssemblyReference.cache
+D:\C#\Task#5\VideoRent\VideoRentBL\obj\Debug\VideoRentBL.dll
+D:\C#\Task#5\VideoRent\VideoRentBL\obj\Debug\VideoRentBL.pdb

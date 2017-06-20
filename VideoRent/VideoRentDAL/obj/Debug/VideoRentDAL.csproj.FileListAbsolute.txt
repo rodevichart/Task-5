@@ -15,3 +15,20 @@ D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.csproj.GenerateResource
 D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.dll
 D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.pdb
 D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.csprojResolveAssemblyReference.cache
+D:\C#\Task#5\VideoRent\VideoRentDAL\bin\Debug\VideoRentDAL.dll.config
+D:\C#\Task#5\VideoRent\VideoRentDAL\bin\Debug\VideoRentDAL.dll
+D:\C#\Task#5\VideoRent\VideoRentDAL\bin\Debug\VideoRentDAL.pdb
+D:\C#\Task#5\VideoRent\VideoRentDAL\bin\Debug\EntityFramework.dll
+D:\C#\Task#5\VideoRent\VideoRentDAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\C#\Task#5\VideoRent\VideoRentDAL\bin\Debug\EntityFramework.xml
+D:\C#\Task#5\VideoRent\VideoRentDAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.csprojResolveAssemblyReference.cache
+D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.InitialModel.resources
+D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.PopulateMemberShip.resources
+D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.AddBirthdateToCustomer.resources
+D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.AddGenreTableAndNewColumnsToMovie.resources
+D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.AddRentalTable.resources
+D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.PopulateGenreTable.resources
+D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.csproj.GenerateResource.Cache
+D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.dll
+D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.pdb
