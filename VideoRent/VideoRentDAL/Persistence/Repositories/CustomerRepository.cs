@@ -17,7 +17,7 @@ namespace VideoRentDAL.Persistence.Repositories
 
         public VideoRentContext VideoRentContext => Context as VideoRentContext;
 
-        public List<Customer> GetCustomersWithMembershipTypeNBirthdate(string search, int orderColm, string orderDir, out int totalRecords,
+        public IList<Customer> GetCustomersWithMembershipTypeNBirthdate(string search, int orderColm, string orderDir, out int totalRecords,
             out int recordSearched, int pageIndex = 1, int pageSize = 10)
         {
             var data = VideoRentContext.Customers.AsQueryable();
