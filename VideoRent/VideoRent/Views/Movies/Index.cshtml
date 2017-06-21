@@ -1,26 +1,98 @@
-﻿@model IList<VideoRent.Models.Movie>
+﻿@model VideoRent.Models.CamelCaseResolver
 @{
     ViewBag.Title = "Movies";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Movies</h2>
 @*@Html.ActionLink("New Movie","New","Movies", null,new {@class = "btn btn-primary"})*@
-<a class="btn btn-primary" href="Movies/New">New Movie</a>
-<table class="table table-striped table-hover">
+<div>
+    <p>
+        <a class="btn btn-primary" href="Movies/New">New Movie</a>
+    </p>
+</div>
+<table id="movies" class="table table-striped table-hover">
     <thead>
     <tr>
         <th>Movie</th>
         <th>Genre</th>
+        <th>Delete</th>
     </tr>
-    </thead>  
-    @foreach (var movie in Model)
-    {
-
-        <tr>
-            <td><a href="Movies/Edit/@movie.Id">@movie.Name</a></td>
-            <td>@movie.Genre.Name</td>
-        </tr>
-    }
-
+    </thead>
 </table>
+
+@section scripts
+{
+    <script>
+
+        var dataTable = {
+            table: null,
+            initializeDataTable: function() {
+                dataTable.table = $("#movies").DataTable({
+                    processing: true,
+                    serverSide: true,
+                    ajax: {
+                        url: "/Movies/Index",
+                        type: "POST",
+                        dataSrc: "data"
+                    },
+                    columns: [
+                        {
+                            data: "name",
+                            render: function(data, type, movie) {
+                                return "<a href='/movies/edit/" + movie.id + "'>" + movie.name + "</a>";
+                            }
+                        },
+                        {
+                            data: "genre",
+                            render: function(data) {
+                                return data.name;
+                            }
+                        },
+                        {
+                            data: "id",
+                            orderable: false,
+                            render: function(data) {
+                                return "<button class='btn-link js-delete' data-movies-id =" + data + ">Delete</button>";
+                            }
+                        }
+                    ]
+                });
+            },
+            getData: function() {
+                if (dataTable.table == null)
+                    dataTable.initializeDataTable();
+                else
+                    dataTable.table.ajax.reload();
+            }
+        }
+
+        $(document).ready(function() {
+            dataTable.getData();
+        });
+
+
+        $("#movies").on("click", ".js-delete", function () {
+            var button = $(this);
+            bootbox.confirm("Are you sure to delete this movie?", function(result) {
+                if (result) {
+                    $.ajax({
+                        url: "/Movies/Delete/" + button.attr("data-movies-id"),
+                        method: "POST",
+                        cache: false,
+                        success: function () {
+                            dataTable.row(button.parents("tr")).remove().draw(false);
+                        },
+                        error: function(text) {
+                            bootbox.alert(text + "\nPlease refresh page and try again");
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+}
+
+
+
 

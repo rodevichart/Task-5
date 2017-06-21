@@ -7,8 +7,12 @@
 
 <h2>Customers</h2>
 <p>
-@Html.ActionLink("New Customer", "New", "Customers", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("New Customer", "New", "Customers", null, new {@class = "btn btn-primary"})
 </p>
+<div>
+    <label>Enter filter symbols</label>
+    <input id="filterSymbols" type="text" class="form-control"/>
+</div>
 <table id="customers" class="table table-striped table-hover">
     <thead>
 
