@@ -7,6 +7,7 @@ using AutoMapper;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using VideoRent.Models;
+using VideoRent.Models.JsonDatatables;
 using VideoRent.ViewModels;
 using VideoRentBL.DTOs;
 using VideoRentBL.Services.Core;
@@ -75,24 +76,23 @@ namespace VideoRent.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(int? draw, int? start, int? length)
+        public ActionResult Index(DataTableAjaxPostModel model)
         {
-            var totalRecords = 0;
-            var recordsSearched = 0;
-            var orderColm = 0;
+            int totalRecords;
+            int recordsSearched;
 
-            int.TryParse(Request.Form.GetValues("order[0][column]")?.ElementAtOrDefault(0), out orderColm);
-            var orderDir = Request.Form.GetValues("order[0][dir]")?.ElementAtOrDefault(0);
-            var search = Request["search[value]"];
-            start = start.HasValue ? start/10 : 0;
+            var orderColm = model.order.ElementAtOrDefault(0)?.column ?? 0;
+            var orderDir = model.order?.ElementAtOrDefault(0)?.dir;
+            var start = model.start.HasValue ? model.start / 10 : 0;
+
             var customerList =
-                Logic.CustomerService.GetCustomersWithMembershipTypeNBirthdate(search, orderColm, orderDir,
-                    out totalRecords, out recordsSearched, start.Value, length ?? 10);
+                Logic.CustomerService.GetCustomersWithMembershipTypeNBirthdate(model.search.value, orderColm, orderDir,
+                    out totalRecords, out recordsSearched, start.Value, model.length ?? 10);
             var view = Mapper.Map<IList<CustomerDto>, IList<Customer>>(customerList);
 
             var json = (new CamelCaseResolver
             {
-                Data = new {draw = draw, recordsFiltered = recordsSearched, recordsTotal = totalRecords, data = view},
+                Data = new {draw = model.draw, recordsFiltered = recordsSearched, recordsTotal = totalRecords, data = view},
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             });
             return json;

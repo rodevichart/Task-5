@@ -24,8 +24,7 @@ namespace VideoRentBL.Services.Persistence
         }
 
         public IList<ChartDetails> GetCountRentalsMovies()
-        {
-            //var charDetails = new ChartDetails();
+        {            
             var charDetailsList = new List<ChartDetails>();
             var list = _videoRent.RentalRepository.GetAllRentalsWhithCustomersMoviesNMembershipType()
                 .GroupBy(a => a.Movie.Name)
@@ -35,6 +34,7 @@ namespace VideoRentBL.Services.Persistence
                     MovieCount = g.Count()
                 })
                 .OrderBy(m => m.MovieName);
+
             foreach (var details  in list)
              {
                  var charDetails = new ChartDetails

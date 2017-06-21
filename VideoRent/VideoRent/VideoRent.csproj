@@ -214,6 +214,10 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\JsonDatatables\Column.cs" />
+    <Compile Include="Models\JsonDatatables\DataTableAjaxPostModel.cs" />
+    <Compile Include="Models\JsonDatatables\Order.cs" />
+    <Compile Include="Models\JsonDatatables\Search.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsOldIfAMember.cs" />
