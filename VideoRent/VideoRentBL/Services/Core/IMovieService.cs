@@ -5,7 +5,8 @@ namespace VideoRentBL.Services.Core
 {
     public interface IMovieService:IService<MovieDto>
     {
-        IList<MovieDto> GetCustomersWithMembershipTypeNBirthdate(int pageIndex = 1, int pageSize = 10);
+        IList<MovieDto> GetMovieWithGenre(string search, int orderColm, string orderDir, out int totalRecords,
+           out int recordSearched, int pageIndex = 1, int pageSize = 10);
         MovieDto GetCustomerWithMembershipTypeNBirthdate(int id);
 
     }
