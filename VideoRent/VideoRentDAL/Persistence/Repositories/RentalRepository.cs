@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using VideoRentDAL.Core.Domain;
@@ -23,6 +24,68 @@ namespace VideoRentDAL.Persistence.Repositories
                 .Skip((pageIndex - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
+        }
+
+        public IList<Rental> GetAllRentalsWhithCustomersMoviesNMembershipType(string search, int orderColm, string orderDir,
+            out int totalRecords, out int recordSearched, int pageIndex = 1, int pageSize = 10)
+        {
+            var data = VideoRentContext.Rentals.AsQueryable();
+            totalRecords = data.Count();
+
+
+            if (!string.IsNullOrEmpty(search))
+                data = data.Where(r => r.Customer.Name.ToUpper().Contains(search.ToUpper())
+                ||
+                r.Movie.Name.ToUpper().Contains(search.ToUpper())
+                ||
+                r.DateRented.ToString().ToUpper().Contains(search.ToUpper())
+                ||
+                r.DateReturned.Value.ToString().ToUpper().Contains(search.ToUpper())
+                );
+
+            recordSearched = data.Count();
+
+            var result = orderDir.ToUpper().Equals("DESC", StringComparison.CurrentCultureIgnoreCase)
+                ? data
+                    .Include(r => r.Customer)
+                    .Include(r => r.Movie)
+                    .OrderByDescending(OrderByList(orderColm))
+                    .ToList()
+
+
+
+                : data
+                .Include(r => r.Customer)
+                .Include(r => r.Movie)
+                .OrderBy(OrderByList(orderColm))
+                .ToList();
+
+            result = result
+               .Skip(pageIndex * pageSize)
+               .Take(pageSize).ToList();
+
+            
+
+            return result;
+        }
+
+        private static Func<Rental, string> OrderByList(int colmIdx)
+        {
+            
+            switch (colmIdx)
+            {
+                case 0:
+                    return r => r.Customer.Name;
+                case 1:
+                    return r => r.Movie.Genre.Name;
+                case 3:
+                    return r => r.DateRented.ToLongDateString();
+                case 4:
+                    return r => r.DateReturned.Value.ToLongDateString();
+            }
+
+            return r => r.Customer.Name;
+
         }
 
         public IList<Rental> GetAllRentalsWhithCustomersMoviesNMembershipType()
