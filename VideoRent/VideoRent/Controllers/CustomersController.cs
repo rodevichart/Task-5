@@ -19,6 +19,23 @@ namespace VideoRent.Controllers
         public CustomersController(IUnitOfWorkService logic) : base(logic)
         {
         }
+   
+        [Route("GetCustomers")]
+        public ActionResult GetCustomers(string query = null)
+        {
+            if (!string.IsNullOrWhiteSpace(query))
+            {
+                var customers = Logic.CustomerService.Find(c => c.Name.Contains(query));
+                var json = (new CamelCaseResolver
+                {
+                    Data = customers,
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                });
+                return json;
+            }
+
+            return HttpNotFound("Customer not founded");
+        }
 
         [Authorize(Roles = RoleName.CanManageMoviesCustomers)]
         public ActionResult New()

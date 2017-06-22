@@ -11,6 +11,7 @@ namespace VideoRentBL.DTOs
         public DateTime DateAdded { get; set; }
         public DateTime ReleaseDate { get; set; }
         public byte NumberInStock { get; set; }
-       
+        public byte NumberAvailable { get; set; }
+
     }
 }

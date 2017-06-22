@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace VideoRent.Models
+﻿namespace VideoRent.ViewModels
 {
     public static class RoleName
     {

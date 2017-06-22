@@ -32,3 +32,4 @@ D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.PopulateGe
 D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.csproj.GenerateResource.Cache
 D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.dll
 D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.pdb
+D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.AddNumberAvaliableToMovieTable.resources

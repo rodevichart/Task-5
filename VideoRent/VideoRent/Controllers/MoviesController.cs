@@ -18,6 +18,26 @@ namespace VideoRent.Controllers
         {
         }
 
+        [Route("GetMovies")]
+        public ActionResult GetMovies(string query = null)
+        {
+            if (!string.IsNullOrWhiteSpace(query))
+            {
+                var movies = Mapper.Map<IEnumerable<MovieDto>, IEnumerable<Movie>>
+                    (Logic.MovieService.Find(c => c.Name.Contains(query) && c.NumberAvailable > 0));
+
+                var json = (new CamelCaseResolver
+                {
+                    Data = movies,
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                });
+                return json;
+            }
+            return HttpNotFound("Movie not founded");
+        }
+
+
+        [Authorize(Roles = RoleName.CanManageMoviesCustomers)]
         public ActionResult New()
         {
             var genreListView = Mapper.Map<IEnumerable<GenreDto>,IEnumerable<Genre>>(Logic.GenreService.GetAll()); 
@@ -34,7 +54,9 @@ namespace VideoRent.Controllers
         // [Route("movies")]
         public ActionResult Index()
         {
-            return View();
+            if (User.IsInRole(RoleName.CanManageMoviesCustomers))
+                return View("List");
+            return View("ReadOnlyList");
         }
 
         [HttpPost]
@@ -85,7 +107,9 @@ namespace VideoRent.Controllers
             return View("MovieForm",viewModel);
         }
 
+
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageMoviesCustomers)]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {

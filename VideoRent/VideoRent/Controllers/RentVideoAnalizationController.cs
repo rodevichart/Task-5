@@ -5,6 +5,7 @@ using AutoMapper;
 using Newtonsoft.Json;
 using VideoRent.Models;
 using VideoRent.Models.JsonDatatables;
+using VideoRent.ViewModels;
 using VideoRentBL.DTOs;
 using VideoRentBL.Services.Core;
 

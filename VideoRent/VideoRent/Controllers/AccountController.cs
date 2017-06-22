@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using VideoRent.Models;
+using VideoRent.ViewModels;
 
 namespace VideoRent.Controllers
 {

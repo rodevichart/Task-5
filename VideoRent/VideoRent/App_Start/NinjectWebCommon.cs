@@ -1,6 +1,7 @@
 using System.Configuration;
+using System.Web.Http;
 using Ninject.Modules;
-using VideoRentBL;
+using Ninject.Web.WebApi;
 using VideoRentBL.RoutingSolutiongConfigs;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(VideoRent.App_Start.NinjectWebCommon), "Start")]
@@ -54,6 +55,7 @@ namespace VideoRent.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
+                //GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
                 return kernel;
             }
             catch

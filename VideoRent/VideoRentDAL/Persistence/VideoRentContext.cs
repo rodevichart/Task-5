@@ -14,6 +14,13 @@ namespace VideoRentDAL.Persistence
             this.Configuration.LazyLoadingEnabled = false;
         }
 
+
+        /*public VideoRentContext()
+            : base(ConfigurationManager.ConnectionStrings["VideoR"].ConnectionString)
+        {
+            this.Configuration.LazyLoadingEnabled = false;
+        }*/
+
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
         public virtual DbSet<MembershipType> MembershipTypes { get; set; }

@@ -162,3 +162,9 @@ D:\C#\Task#5\VideoRent\VideoRent\obj\Debug\VideoRent.Migrations.InitialModel.res
 D:\C#\Task#5\VideoRent\VideoRent\obj\Debug\VideoRent.csproj.GenerateResource.Cache
 D:\C#\Task#5\VideoRent\VideoRent\obj\Debug\VideoRent.Migrations.SeedUsers.resources
 D:\C#\Task#5\VideoRent\VideoRent\obj\Debug\VideoRent.Migrations.AddDrivingLicenseToApplicationUser.resources
+D:\C#\Task#5\VideoRent\VideoRent\bin\System.Net.Http.Formatting.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\System.Web.Http.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\System.Web.Http.WebHost.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\System.Net.Http.Formatting.xml
+D:\C#\Task#5\VideoRent\VideoRent\bin\System.Web.Http.xml
+D:\C#\Task#5\VideoRent\VideoRent\bin\System.Web.Http.WebHost.xml

@@ -86,6 +86,10 @@
     <Compile Include="Migrations\201706151738588_PopulateGenreTable.Designer.cs">
       <DependentUpon>201706151738588_PopulateGenreTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706220739292_AddNumberAvaliableToMovieTable.cs" />
+    <Compile Include="Migrations\201706220739292_AddNumberAvaliableToMovieTable.Designer.cs">
+      <DependentUpon>201706220739292_AddNumberAvaliableToMovieTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\EntityConfigurations\CustomerConfigurations.cs" />
     <Compile Include="Persistence\EntityConfigurations\GenreConfigurations.cs" />
@@ -123,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706151738588_PopulateGenreTable.resx">
       <DependentUpon>201706151738588_PopulateGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706220739292_AddNumberAvaliableToMovieTable.resx">
+      <DependentUpon>201706220739292_AddNumberAvaliableToMovieTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
