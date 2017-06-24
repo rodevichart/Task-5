@@ -32,12 +32,7 @@ namespace VideoRent.Controllers.Api
             catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex.InnerException);
-            }
-            finally
-            {
-                Logic.Dispose();
-            }
-            
+            }   
         }
 
     }
