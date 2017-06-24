@@ -61,15 +61,13 @@ namespace VideoRentBL.Services.Persistence
         }
 
 
-        public void Add(TDto dtoObj)
+        public virtual void Add(TDto dtoObj)
         {
             var dto = Mapper.Map<TDto, T>(dtoObj);
             Mutex.WaitOne();
             Repository.Add(dto);
             UnitOfWork.Complete();
             Mutex.ReleaseMutex();
-
-
         }
 
         public void AddRange(IList<TDto> dtoObjs)

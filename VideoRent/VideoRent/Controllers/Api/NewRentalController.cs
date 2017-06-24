@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using AutoMapper;
 using VideoRent.Models;
 using VideoRentBL.DTOs;
+using VideoRentBL.Exceptons;
 using VideoRentBL.Services.Core;
 
 namespace VideoRent.Controllers.Api
@@ -17,47 +15,30 @@ namespace VideoRent.Controllers.Api
         {
         }
 
-        public NewRentalController()
-        {            
-        }
-
         [HttpPost]
-        //[Route("newrental")]
         public IHttpActionResult CreateNewRental(NewRental newRental)
         {
             var custId = newRental.CustomerId;
-            var customer = Mapper.Map<CustomerDto, Customer>(Logic.CustomerService.Get(custId));
-
-            //if (customer == null)
-            //    return BadRequest("Invalid customer Id.");
-
-            var movies = Mapper.Map<IEnumerable<MovieDto>, IEnumerable<Movie>>(Logic.MovieService.Find(m => newRental.MovieIds.Contains(m.Id)));
-
-            foreach (var movie in movies)
+            try
             {
-                if (movie.NumberAvailable == 0)
-                    return BadRequest("Movie is not available.");
+                Logic.RentalService.AddRentalsForCustomer(custId, newRental.MovieIds);
 
-                movie.NumberAvailable--;
-                var rental = new Rental
-                {
-                    Customer = customer,
-                    Movie = movie,
-                    DateRented = DateTime.Now
-                };
-
-                Logic.MovieService.Update(Mapper.Map<Movie, MovieDto>(movie));
-                Logic.RentalService.Add(Mapper.Map<Rental, RentalDto>(rental));
+                return Ok();
             }
-
-            return Ok();
+            catch (NoMovieException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex.InnerException);
+            }
+            finally
+            {
+                Logic.Dispose();
+            }
+            
         }
-
-        public IHttpActionResult GetCust()
-        {
-            return Ok();
-        }
-
 
     }
 }

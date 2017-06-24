@@ -62,6 +62,9 @@ namespace VideoRent.Controllers
         [HttpPost]
         public ActionResult Index(DataTableAjaxPostModel model)
         {
+            if (model == null)
+                return HttpNotFound();
+
             int totalRecords;
             int recordsSearched;
 

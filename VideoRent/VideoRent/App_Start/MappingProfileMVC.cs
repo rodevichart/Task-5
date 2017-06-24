@@ -16,6 +16,7 @@ namespace VideoRent
 
             CreateMap<Customer, CustomerDto>();
             CreateMap<CustomerDto, Customer>();
+                 
 
             CreateMap<MembershipType, MembershipTypeDto>();
             CreateMap<MembershipTypeDto, MembershipType>();
@@ -23,33 +24,16 @@ namespace VideoRent
 
             CreateMap<Movie, MovieDto>();
             CreateMap<MovieDto, Movie>();
+               
 
             CreateMap<Genre, GenreDto>();
             CreateMap<GenreDto, Genre>();
 
-            CreateMap<Rental, RentalDto>().ReverseMap();
-      
+            CreateMap<Rental, RentalDto>();
+            CreateMap<RentalDto, Rental>();
 
             #endregion
 
-            #region Entity To DTO Mapping
-
-            //CreateMap<VideoRentDAL.Core.Domain.Customer, CustomerDto>();
-            //CreateMap<CustomerDto, VideoRentDAL.Core.Domain.Customer>();
-
-
-            //CreateMap<VideoRentDAL.Core.Domain.Genre, GenreDto>();
-            //CreateMap<GenreDto, VideoRentDAL.Core.Domain.Genre>();
-
-            //CreateMap<VideoRentDAL.Core.Domain.MembershipType, MembershipTypeDto>();
-            //CreateMap<MembershipTypeDto, VideoRentDAL.Core.Domain.MembershipType>();
-
-            //CreateMap<VideoRentDAL.Core.Domain.Movie, MovieDto>();
-            //CreateMap<MovieDto, VideoRentDAL.Core.Domain.Movie>();
-
-            //CreateMap<VideoRentDAL.Core.Domain.Rental, RentalDto>();
-            //CreateMap<RentalDto, VideoRentDAL.Core.Domain.Rental>();
-            #endregion
         }
         
     }

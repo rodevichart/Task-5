@@ -77,7 +77,7 @@ namespace VideoRentDAL.Persistence.Repositories
                 case 0:
                     return r => r.Customer.Name;
                 case 1:
-                    return r => r.Movie.Genre.Name;
+                    return r => r.Movie.Name;
                 case 3:
                     return r => r.DateRented.ToLongDateString();
                 case 4:

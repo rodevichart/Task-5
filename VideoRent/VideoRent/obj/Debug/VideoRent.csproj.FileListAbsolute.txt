@@ -168,3 +168,12 @@ D:\C#\Task#5\VideoRent\VideoRent\bin\System.Web.Http.WebHost.dll
 D:\C#\Task#5\VideoRent\VideoRent\bin\System.Net.Http.Formatting.xml
 D:\C#\Task#5\VideoRent\VideoRent\bin\System.Web.Http.xml
 D:\C#\Task#5\VideoRent\VideoRent\bin\System.Web.Http.WebHost.xml
+D:\C#\Task#5\VideoRent\VideoRent\bin\Ninject.Web.WebApi.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\Ninject.WebApi.DependencyResolver.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\Ninject.Web.WebApi.xml
+D:\C#\Task#5\VideoRent\VideoRent\bin\Glimpse.Ado.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\Glimpse.AspNet.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\Glimpse.Core.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\Glimpse.EF6.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\Glimpse.Mvc5.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\Elmah.dll

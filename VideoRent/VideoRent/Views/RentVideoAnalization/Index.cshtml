@@ -13,27 +13,6 @@
         <th>Date Returned</th>
     </tr>
     </thead>
-   @* @foreach (var rent in Model)
-    {
-
-        <tr>
-            <td>@rent.Customer.Name</td>
-                        <td>@rent.Customer.MembershipType.Name</td>
-            <td>@rent.Movie.Name</td>
-            <td>@rent.DateRented.ToLongDateString()</td>
-            <td>
-                @if (rent.DateReturned != null)
-                {
-                    @rent.DateReturned.Value.ToLongDateString()
-                }
-                else
-                {
-                    <p>Not yet returned</p>
-                }
-            </td>
-        </tr>
-    }*@
-
 </table>
 <div id="chartdiv" style="width: 600px; height: 350px;">
 </div>
@@ -41,110 +20,9 @@
 @section scripts
 {
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script src ="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', { 'packages': ['corechart'] });
-        $(function () {
-            $.ajax({
-                type: 'POST',
-                dataType: 'json',
-                contentType: 'application/json',
-                url: 'RentVideoAnalization/GetCharData',
-                data: 'data',
-                success: function (response) {
-
-                    drawchart(response);
-                },
-
-                error: function () {
-                    alert("Error loading data! Please try again.");
-                }
-            });
-        });
-
-        function drawchart(dataValues) {
-
-            var data = new google.visualization.DataTable();
-
-
-            data.addColumn('string', 'MovieName');
-            data.addColumn('number', 'Count');
-
-            for (var i = 0; i < dataValues.length; i++) {
-                data.addRow([dataValues[i].movieName, dataValues[i].count]);
-            }
-
-            var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
-
-            chart.draw(data,
-              {
-                  title: "Rent Movie",
-                  position: "top",
-                  fontsize: "14px",
-                  chartArea: { width: '50%' },
-              });
-        }
-
-
-        var dataTable = {
-            table: null,
-            initializeDataTable: function () {
-                dataTable.table = $("#rentals").DataTable({
-                    processing: true,
-                    serverSide: true,
-                    ajax: {
-                        url: "/RentVideoAnalization/Index",
-                        type: "POST",
-                        dataSrc: "data"
-                    },
-                    columns: [
-                        {
-                            data: "customer",
-                            render: function (data) {
-                                return data.name;
-                            }
-                        },
-                        {
-                            data: "movie",
-                            render: function (data) {
-                                return data.name;
-                            }
-                        },
-                        {
-                            data: "dateRented",
-                            render: function (data) {
-                                var options = { day: 'numeric', month: 'short', year: 'numeric'};
-                                return new Date(data).toLocaleDateString('en-GB',options);
-
-                            }
-                        },
-                        {
-                            data: "dateReturned",
-                            render: function (data) {
-                                if (data == null)
-                                    return "Not yet returned";
-                                return new Date(data).toLocaleDateString('en-GB', options);
-                            }
-                        }
-                    ]
-                });
-            },
-            getData: function () {
-                if (dataTable.table == null)
-                    dataTable.initializeDataTable();
-                else
-                    dataTable.table.ajax.reload();
-            }
-        }
-
-        $(document).ready(function () {
-            dataTable.getData();
-        });
-
-
-
-
-
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+    <script type="text/javascript" src="/Scripts/RentalAnalization/RentalAnalizationDataTable.js"></script>
+    <script type="text/javascript" src="/Scripts/RentalAnalization/RentalGoogleChart.js"></script>
+    <script type="text/javascript" src="/Scripts/RentalAnalization/Initialization.js"></script>
 }
 

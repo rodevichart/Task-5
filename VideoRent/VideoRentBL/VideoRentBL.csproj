@@ -57,6 +57,8 @@
     <Compile Include="DTOs\MembershipTypeDto.cs" />
     <Compile Include="DTOs\MovieDto.cs" />
     <Compile Include="DTOs\RentalDto.cs" />
+    <Compile Include="Exceptons\BlException.cs" />
+    <Compile Include="Exceptons\NoMovieException.cs" />
     <Compile Include="Lib\ChartDetails.cs" />
     <Compile Include="RoutingSolutiongConfigs\MappingProfile.cs" />
     <Compile Include="RoutingSolutiongConfigs\NinjectBLModule.cs" />

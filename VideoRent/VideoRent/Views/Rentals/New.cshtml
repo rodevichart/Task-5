@@ -9,14 +9,14 @@
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
-            <input id="customer" type="text" value="" class="form-control" />
+            <input id="customer" name="customer" data-rule-validCustomer="true" required type="text" value="" class="form-control" />
         </div>
     </div>
 
     <div class="form-group">
         <label>Movie</label>
         <div class="tt-container">
-            <input id="movie" type="text" value="" class="form-control"/>
+            <input id="movie" name="movie" data-rule-atLeastOneMovie type="text" value="" class="form-control"/>
         </div>
     </div>
     <div class="row">
@@ -29,78 +29,7 @@
 </form>
 @section scripts
 {
-    <script>
-        $(document).ready(function () {
+    @Scripts.Render("~/bundles/jqueryval")
+   <script type="text/javascript" src="/Scripts/Rental/RentalBloodhoundNValidation.js"></script>
 
-            var vm = {
-                movieIds: []
-            };
-
-            var customers = new Bloodhound({
-                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-                queryTokenizer: Bloodhound.tokenizers.whitespace,                
-                remote: {
-                    url: '/getcustomers?query=%QUERY',
-                    wildcard: '%QUERY'
-                }
-            });
-
-            $('#customer').typeahead({
-                minLength: 3,
-                highlight: true
-            }, {
-                name: 'customers',
-                display: 'name',
-                source: customers
-            }).on("typeahead:select", function(e,customer) {
-                vm.customerId = customer.id;
-            });
-
-
-            var movies = new Bloodhound({
-                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-                queryTokenizer: Bloodhound.tokenizers.whitespace,
-                remote: {
-                    url: '/getmovies?query=%QUERY',
-                    wildcard: '%QUERY'
-                }
-            });
-
-            $('#movie').typeahead({
-                minLength: 3,
-                highlight: true
-            }, {
-                name: 'movies',
-                display: 'name',
-                source: movies
-            }).on("typeahead:select", function (e, movie) {
-                $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
-
-                $("#movie").typeahead("val", "");
-
-                vm.movieIds.push(movie.id);
-            });
-            $("#newRental").submit(function(e) {
-                e.preventDefault();
-                /*$.ajax({
-                    url: "/api/GetCust",
-                    method: "GET"
-                }).done(function() {
-                    alert("ok");
-                });*/
-                $.ajax({
-                        url: "/api/newRental",
-                        method: "POST",
-                        data: vm
-                    })
-                    .done(function () {
-                        console.log("done");
-
-                    })
-                    .fail(function() {
-
-                    });
-            });
-        })
-    </script>
 }

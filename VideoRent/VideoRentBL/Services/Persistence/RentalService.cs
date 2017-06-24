@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using VideoRentBL.DTOs;
+using VideoRentBL.Exceptons;
 using VideoRentBL.Lib;
 using VideoRentBL.Services.Core;
 using VideoRentDAL.Core;
@@ -52,6 +54,42 @@ namespace VideoRentBL.Services.Persistence
                  charDetailsList.Add(charDetails);
             }         
             return charDetailsList;
+        }
+
+        public void AddRentalsForCustomer(int customerId, IEnumerable<int> moviesIds)
+        {
+            try
+            {
+                var customer = _videoRent.CustomersRepository.Get(customerId);
+                if (customer == null)
+                    throw new NullReferenceException("Can not find customer.");
+
+                foreach (var movieId in moviesIds)
+                {
+                    var movie = _videoRent.MoviesRepository.Get(movieId);
+                    if (movie == null)
+                        throw new NullReferenceException("Can not find movie.");
+
+                    if (movie.NumberInStock == 0)
+                        throw new NoMovieException("No movie in stock.");
+
+                    movie.NumberInStock--;
+
+                    _videoRent.RentalRepository.Add(new Rental
+                    {
+                        Customer = customer,
+                        Movie = movie,
+                        DateRented = DateTime.Now
+                    });
+                }
+
+                _videoRent.Complete();
+            }
+            catch (NullReferenceException ex)
+            {                
+                throw new BlException(ex.Message,ex.InnerException);
+            }
+            
         }
     }
 }

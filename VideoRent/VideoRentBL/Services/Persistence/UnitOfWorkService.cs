@@ -4,7 +4,7 @@ using VideoRentDAL.Core;
 
 namespace VideoRentBL.Services.Persistence
 {
-    public class UnitOfWorkService:IUnitOfWorkService, IDisposable
+    public class UnitOfWorkService:IUnitOfWorkService
     {
         private ICustomerService _customerService;
 

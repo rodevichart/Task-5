@@ -1,6 +1,8 @@
-﻿namespace VideoRentBL.Services.Core
+﻿using System;
+
+namespace VideoRentBL.Services.Core
 {
-    public interface IUnitOfWorkService
+    public interface IUnitOfWorkService: IDisposable
     {
         ICustomerService CustomerService { get; }
         IGenreService GenreService { get; }

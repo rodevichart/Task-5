@@ -10,5 +10,7 @@ namespace VideoRentBL.Services.Core
             out int recordSearched, int pageIndex = 1, int pageSize = 10);
 
         IList<ChartDetails> GetCountRentalsMovies();
+
+        void AddRentalsForCustomer(int customerId, IEnumerable<int> moviesIds);
     }
 }
