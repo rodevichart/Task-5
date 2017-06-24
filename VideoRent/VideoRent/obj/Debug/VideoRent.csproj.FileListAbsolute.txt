@@ -177,3 +177,7 @@ D:\C#\Task#5\VideoRent\VideoRent\bin\Glimpse.Core.dll
 D:\C#\Task#5\VideoRent\VideoRent\bin\Glimpse.EF6.dll
 D:\C#\Task#5\VideoRent\VideoRent\bin\Glimpse.Mvc5.dll
 D:\C#\Task#5\VideoRent\VideoRent\bin\Elmah.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\ru-RU\VideoRent.resources.dll
+D:\C#\Task#5\VideoRent\VideoRent\obj\Debug\VideoRent.Resourses.NewCustomer.resources
+D:\C#\Task#5\VideoRent\VideoRent\obj\Debug\VideoRent.Resourses.NewCustomer.ru-RU.resources
+D:\C#\Task#5\VideoRent\VideoRent\obj\Debug\ru-RU\VideoRent.resources.dll

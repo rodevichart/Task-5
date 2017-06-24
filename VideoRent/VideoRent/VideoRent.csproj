@@ -260,6 +260,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\NewRental.cs" />
+    <Compile Include="Resourses\NewCustomer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewCustomer.resx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\CamelCaseResolver.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -651,6 +656,11 @@
     <EmbeddedResource Include="Migrations\201706200752396_AddDrivingLicenseToApplicationUser.resx">
       <DependentUpon>201706200752396_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resourses\NewCustomer.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NewCustomer.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resourses\NewCustomer.ru-RU.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

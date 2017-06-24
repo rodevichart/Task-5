@@ -15,9 +15,9 @@ namespace VideoRent.ViewModels
             get
             {
                 if (Customer != null && Customer.Id != 0)
-                    return "Edit Customer";
+                    return Resourses.NewCustomer.EditCustomer;
 
-                return "New Customer";
+                return Resourses.NewCustomer.CreateCustomer;
             }
         }
     }

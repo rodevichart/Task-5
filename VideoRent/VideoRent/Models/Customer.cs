@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace VideoRent.Models
 {
@@ -12,17 +9,19 @@ namespace VideoRent.Models
 
         [Required(ErrorMessage = "Please enter Customer name.")]
         [StringLength(255)]
+        [Display(Name = "Name", ResourceType = typeof(Resourses.NewCustomer))]
         public string Name { get; set; }
                
         public MembershipType MembershipType { get; set; }
 
-        [Display(Name = "Membership Type")]
+        [Display(Name = "MembershipType", ResourceType = typeof(Resourses.NewCustomer))]
         public byte MembershipTypeId { get; set; }
 
+        [Display(Name = "SubscribedToNewsletter", ResourceType = typeof(Resourses.NewCustomer))]
         public bool IsSubscribedToNewsletter { get; set; }
 
         [Min18YearsOldIfAMember]
-        [Display(Name = "Day of birth")]
+        [Display(Name = "Dayofbirth", ResourceType = typeof(Resourses.NewCustomer))]
         public DateTime? Birthdate { get; set; }
     }
 }
