@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace VideoRent.Controllers
 {
-    public class RentalsController : Controller
+    public class NewRentalController : Controller
     {
 
         public ActionResult New()

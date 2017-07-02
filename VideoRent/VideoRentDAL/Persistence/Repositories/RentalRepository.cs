@@ -27,7 +27,7 @@ namespace VideoRentDAL.Persistence.Repositories
         }
 
         public IList<Rental> GetAllRentalsWhithCustomersMoviesNMembershipType(string search, int orderColm, string orderDir,
-            out int totalRecords, out int recordSearched, int pageIndex = 1, int pageSize = 10)
+            out int totalRecords, out int recordSearched, int pageIndex, int pageSize = 10)
         {
             var data = VideoRentContext.Rentals.AsQueryable();
             totalRecords = data.Count();

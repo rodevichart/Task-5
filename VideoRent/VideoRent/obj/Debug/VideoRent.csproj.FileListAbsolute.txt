@@ -181,3 +181,45 @@ D:\C#\Task#5\VideoRent\VideoRent\bin\ru-RU\VideoRent.resources.dll
 D:\C#\Task#5\VideoRent\VideoRent\obj\Debug\VideoRent.Resourses.NewCustomer.resources
 D:\C#\Task#5\VideoRent\VideoRent\obj\Debug\VideoRent.Resourses.NewCustomer.ru-RU.resources
 D:\C#\Task#5\VideoRent\VideoRent\obj\Debug\ru-RU\VideoRent.resources.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\ru-RU\VideoRent.resources.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Castle.Core.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Elmah.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Glimpse.Ado.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Glimpse.AspNet.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Glimpse.Core.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Glimpse.EF6.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Glimpse.Mvc5.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Moq.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Ninject.Web.WebApi.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Ninject.WebApi.DependencyResolver.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\System.Net.Http.Formatting.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\System.Web.Http.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\System.Web.Http.WebHost.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Xbehave.Core.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Xbehave.Execution.desktop.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\xunit.abstractions.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\xunit.assert.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\xunit.core.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\xunit.execution.desktop.dll
+D:\C# Mosh\VideoRent\VideoRent\bin\Moq.xml
+D:\C# Mosh\VideoRent\VideoRent\bin\Ninject.Web.WebApi.xml
+D:\C# Mosh\VideoRent\VideoRent\bin\System.Net.Http.Formatting.xml
+D:\C# Mosh\VideoRent\VideoRent\bin\System.Web.Http.xml
+D:\C# Mosh\VideoRent\VideoRent\bin\System.Web.Http.WebHost.xml
+D:\C# Mosh\VideoRent\VideoRent\bin\Xbehave.Core.pdb
+D:\C# Mosh\VideoRent\VideoRent\bin\Xbehave.Core.xml
+D:\C# Mosh\VideoRent\VideoRent\bin\Xbehave.Execution.desktop.pdb
+D:\C# Mosh\VideoRent\VideoRent\bin\xunit.abstractions.xml
+D:\C# Mosh\VideoRent\VideoRent\bin\xunit.assert.pdb
+D:\C# Mosh\VideoRent\VideoRent\bin\xunit.assert.xml
+D:\C# Mosh\VideoRent\VideoRent\bin\xunit.core.pdb
+D:\C# Mosh\VideoRent\VideoRent\bin\xunit.core.xml
+D:\C# Mosh\VideoRent\VideoRent\bin\xunit.execution.desktop.pdb
+D:\C# Mosh\VideoRent\VideoRent\bin\xunit.execution.desktop.xml
+D:\C# Mosh\VideoRent\VideoRent\obj\Debug\VideoRent.Migrations.InitialModel.resources
+D:\C# Mosh\VideoRent\VideoRent\obj\Debug\VideoRent.Migrations.SeedUsers.resources
+D:\C# Mosh\VideoRent\VideoRent\obj\Debug\VideoRent.Migrations.AddDrivingLicenseToApplicationUser.resources
+D:\C# Mosh\VideoRent\VideoRent\obj\Debug\VideoRent.Resourses.NewCustomer.resources
+D:\C# Mosh\VideoRent\VideoRent\obj\Debug\VideoRent.Resourses.NewCustomer.ru-RU.resources
+D:\C# Mosh\VideoRent\VideoRent\obj\Debug\VideoRent.csproj.GenerateResource.Cache
+D:\C# Mosh\VideoRent\VideoRent\obj\Debug\ru-RU\VideoRent.resources.dll
