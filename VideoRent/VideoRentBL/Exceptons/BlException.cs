@@ -6,11 +6,21 @@ using System.Threading.Tasks;
 
 namespace VideoRentBL.Exceptons
 {
+    [Serializable]
     public class BlException : Exception
     {
-       public BlException(string message, Exception innerException)
-            :base(message, innerException)
-       {
-       }
+        public BlException()
+        {
+        }
+
+        public BlException(string message)
+            : base(message)
+        {
+        }
+
+        public BlException(string message, Exception innerException)
+            : base(message, innerException)
+        {
+        }
     }
 }

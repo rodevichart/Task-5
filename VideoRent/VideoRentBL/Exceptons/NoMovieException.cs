@@ -2,10 +2,20 @@ using System;
 
 namespace VideoRentBL.Exceptons
 {
-    public class NoMovieException : Exception
+    [Serializable]
+    public class NoMovieException : BlException
     {
+        public NoMovieException()
+        {
+        }
+
         public NoMovieException(string message)
-            :base(message)
+            : base(message)
+        {
+        }
+
+        public NoMovieException(string message, Exception innerException)
+            : base(message, innerException)
         {
         }
     }

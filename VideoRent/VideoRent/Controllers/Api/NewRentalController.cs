@@ -25,14 +25,14 @@ namespace VideoRent.Controllers.Api
 
                 return Ok();
             }
-            catch (NoMovieException ex)
+            catch (BlException ex)
             {
                 return BadRequest(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception(ex.Message, ex.InnerException);
-            }   
+                return NotFound();
+            }
         }
 
     }
