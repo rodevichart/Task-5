@@ -26,9 +26,9 @@ function drawchart(dataValues) {
     data.addColumn('string', 'MovieName');
     data.addColumn('number', 'Count');
 
-    for (var i = 0; i < dataValues.length; i++) {
+    $.each(dataValues, function (i) {
         data.addRow([dataValues[i].movieName, dataValues[i].count]);
-    }
+    });
 
     var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
 
@@ -37,6 +37,6 @@ function drawchart(dataValues) {
           title: "Rent Movie",
           position: "top",
           fontsize: "14px",
-          chartArea: { width: '50%' },
+          chartArea: { width: '50%' }
       });
 }
