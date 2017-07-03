@@ -655,7 +655,7 @@
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
     <None Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Shared\_LoginPartialManager.cshtml" />
-    <None Include="Views\Rentals\New.cshtml" />
+    <None Include="Views\NewRental\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

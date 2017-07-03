@@ -34,3 +34,39 @@ D:\C# Mosh\VideoRent\VideoRentBL.UnitTest\bin\Debug\EntityFramework.xml
 D:\C# Mosh\VideoRent\VideoRentBL.UnitTest\obj\Debug\VideoRentBL.UnitTest.csprojResolveAssemblyReference.cache
 D:\C# Mosh\VideoRent\VideoRentBL.UnitTest\obj\Debug\VideoRentBL.UnitTest.dll
 D:\C# Mosh\VideoRent\VideoRentBL.UnitTest\obj\Debug\VideoRentBL.UnitTest.pdb
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.runner.utility.net35.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.runner.reporters.net452.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.abstractions.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\VideoRentBL.UnitTest.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\VideoRentBL.UnitTest.pdb
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\AutoMapper.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\Castle.Core.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\Moq.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\VideoRentBL.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\VideoRentDAL.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\Xbehave.Core.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\Xbehave.Execution.desktop.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.assert.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.core.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.execution.desktop.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\Ninject.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\EntityFramework.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\VideoRentBL.pdb
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\VideoRentDAL.pdb
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\AutoMapper.xml
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\Moq.xml
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\Xbehave.Core.pdb
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\Xbehave.Core.xml
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\Xbehave.Execution.desktop.pdb
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.assert.pdb
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.assert.xml
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.core.pdb
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.core.xml
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.execution.desktop.pdb
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\xunit.execution.desktop.xml
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\Ninject.xml
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\bin\Debug\EntityFramework.xml
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\obj\Debug\VideoRentBL.UnitTest.csprojResolveAssemblyReference.cache
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\obj\Debug\VideoRentBL.UnitTest.dll
+D:\C#\Task#5\VideoRent\VideoRentBL.UnitTest\obj\Debug\VideoRentBL.UnitTest.pdb

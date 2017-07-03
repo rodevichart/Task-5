@@ -223,3 +223,22 @@ D:\C# Mosh\VideoRent\VideoRent\obj\Debug\VideoRent.Resourses.NewCustomer.resourc
 D:\C# Mosh\VideoRent\VideoRent\obj\Debug\VideoRent.Resourses.NewCustomer.ru-RU.resources
 D:\C# Mosh\VideoRent\VideoRent\obj\Debug\VideoRent.csproj.GenerateResource.Cache
 D:\C# Mosh\VideoRent\VideoRent\obj\Debug\ru-RU\VideoRent.resources.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\Castle.Core.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\Moq.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\Xbehave.Core.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\Xbehave.Execution.desktop.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\xunit.abstractions.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\xunit.assert.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\xunit.core.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\xunit.execution.desktop.dll
+D:\C#\Task#5\VideoRent\VideoRent\bin\Moq.xml
+D:\C#\Task#5\VideoRent\VideoRent\bin\Xbehave.Core.pdb
+D:\C#\Task#5\VideoRent\VideoRent\bin\Xbehave.Core.xml
+D:\C#\Task#5\VideoRent\VideoRent\bin\Xbehave.Execution.desktop.pdb
+D:\C#\Task#5\VideoRent\VideoRent\bin\xunit.abstractions.xml
+D:\C#\Task#5\VideoRent\VideoRent\bin\xunit.assert.pdb
+D:\C#\Task#5\VideoRent\VideoRent\bin\xunit.assert.xml
+D:\C#\Task#5\VideoRent\VideoRent\bin\xunit.core.pdb
+D:\C#\Task#5\VideoRent\VideoRent\bin\xunit.core.xml
+D:\C#\Task#5\VideoRent\VideoRent\bin\xunit.execution.desktop.pdb
+D:\C#\Task#5\VideoRent\VideoRent\bin\xunit.execution.desktop.xml

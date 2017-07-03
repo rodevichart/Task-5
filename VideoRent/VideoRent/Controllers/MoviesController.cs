@@ -18,6 +18,7 @@ namespace VideoRent.Controllers
         {
         }
 
+        [Authorize(Roles = RoleName.CanManageMoviesCustomers)]
         [Route("GetMovies")]
         public ActionResult GetMovies(string query = null)
         {

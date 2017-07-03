@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web.Http;
 using AutoMapper;
 using VideoRent.Models;
+using VideoRent.ViewModels;
 using VideoRentBL.DTOs;
 using VideoRentBL.Exceptons;
 using VideoRentBL.Services.Core;
@@ -14,7 +15,7 @@ namespace VideoRent.Controllers.Api
         public NewRentalController(IUnitOfWorkService logic) : base(logic)
         {
         }
-
+        [Authorize(Roles = RoleName.CanManageMoviesCustomers)]
         [HttpPost]
         public IHttpActionResult CreateNewRental(NewRental newRental)
         {

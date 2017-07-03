@@ -19,7 +19,8 @@ namespace VideoRent.Controllers
         public CustomersController(IUnitOfWorkService logic) : base(logic)
         {
         }
-   
+
+        [Authorize(Roles = RoleName.CanManageMoviesCustomers)]
         [Route("GetCustomers")]
         public ActionResult GetCustomers(string query = null)
         {

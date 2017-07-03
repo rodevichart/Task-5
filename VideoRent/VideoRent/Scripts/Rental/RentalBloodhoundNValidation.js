@@ -16,7 +16,8 @@
     $('#customer').typeahead({
         minLength: 3,
         highlight: true
-    }, {
+    },
+    {
         name: 'customers',
         display: 'name',
         source: customers

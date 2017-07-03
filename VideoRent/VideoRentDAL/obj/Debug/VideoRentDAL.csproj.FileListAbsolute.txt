@@ -34,3 +34,6 @@ D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.dll
 D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.pdb
 D:\C#\Task#5\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.AddNumberAvaliableToMovieTable.resources
 D:\C# Mosh\VideoRent\VideoRentDAL\obj\Debug\VideoRentDAL.Migrations.AddNumberAvaliableToMovieTable.resources
+D:\C#\Task#5\VideoRent\VideoRentDAL\bin\Debug\Glimpse.Ado.dll
+D:\C#\Task#5\VideoRent\VideoRentDAL\bin\Debug\Glimpse.Core.dll
+D:\C#\Task#5\VideoRent\VideoRentDAL\bin\Debug\Glimpse.EF6.dll
