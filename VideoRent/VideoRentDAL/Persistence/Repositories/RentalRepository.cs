@@ -49,24 +49,23 @@ namespace VideoRentDAL.Persistence.Repositories
             else
             recordSearched = totalRecords;
 
-            var result = orderDir.ToUpper().Equals("DESC", StringComparison.CurrentCultureIgnoreCase)
+            var order = orderDir.ToUpper().Equals("DESC", StringComparison.CurrentCultureIgnoreCase)
                 ? data
                     .Include(r => r.Customer)
                     .Include(r => r.Movie)
                     .OrderByDescending(OrderByList(orderColm))
-                    .ToList()
 
 
 
                 : data
                 .Include(r => r.Customer)
                 .Include(r => r.Movie)
-                .OrderBy(OrderByList(orderColm))
-                .ToList();
+                .OrderBy(OrderByList(orderColm));
 
-            result = result
+           var result = order
                .Skip(pageIndex * pageSize)
-               .Take(pageSize).ToList();
+               .Take(pageSize)
+               .ToList();
 
             
 

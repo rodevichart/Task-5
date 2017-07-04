@@ -35,20 +35,19 @@ namespace VideoRentDAL.Persistence.Repositories
                 recordSearched = totalRecords;
 
 
-            var result = orderDir.ToUpper().Equals("DESC", StringComparison.CurrentCultureIgnoreCase)
+            var order = orderDir.ToUpper().Equals("DESC", StringComparison.CurrentCultureIgnoreCase)
                 ? data
                     .Include(m => m.Genre)
                     .OrderByDescending(OrderByList(orderColm))
-                    .ToList()
 
                 : data
                     .Include(m => m.Genre)
-                    .OrderBy(OrderByList(orderColm))
-                    .ToList();
+                    .OrderBy(OrderByList(orderColm));
 
-            result = result
+           var result = order
                 .Skip(pageIndex*pageSize)
-                .Take(pageSize).ToList();
+                .Take(pageSize)
+                .ToList();
 
 
 

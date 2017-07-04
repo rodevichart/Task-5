@@ -9,7 +9,7 @@ using VideoRentDAL.Core.Repositories;
 
 namespace VideoRentDAL.Persistence.Repositories
 {
-    public class CustomerRepository:Repository<Customer>,ICustomerRepository
+    public class CustomerRepository : Repository<Customer>, ICustomerRepository
     {
         public CustomerRepository(DbContext context) : base(context)
         {
@@ -17,7 +17,8 @@ namespace VideoRentDAL.Persistence.Repositories
 
         public VideoRentContext VideoRentContext => Context as VideoRentContext;
 
-        public IList<Customer> GetCustomersWithMembershipTypeNBirthdate(string search, int orderColm, string orderDir, out int totalRecords,
+        public IList<Customer> GetCustomersWithMembershipTypeNBirthdate(string search, int orderColm, string orderDir,
+            out int totalRecords,
             out int recordSearched, int pageIndex = 1, int pageSize = 10)
         {
             var data = VideoRentContext.Customers.AsQueryable();
@@ -25,32 +26,30 @@ namespace VideoRentDAL.Persistence.Repositories
 
 
             if (!string.IsNullOrEmpty(search))
-            { 
-                 data = data.Where(c => c.Name.ToUpper().Contains(search.ToUpper())
-                 || 
-                  c.MembershipType.Name.ToUpper().Contains(search.ToUpper())
-                 );
+            {
+                data = data.Where(c => c.Name.ToUpper().Contains(search.ToUpper())
+                                       ||
+                                       c.MembershipType.Name.ToUpper().Contains(search.ToUpper())
+                    );
                 recordSearched = data.Count();
             }
             else
-            recordSearched = totalRecords;
+                recordSearched = totalRecords;
 
-            var result = orderDir.ToUpper().Equals("DESC", StringComparison.CurrentCultureIgnoreCase)
+            
+
+           var order = orderDir.ToUpper().Equals("DESC", StringComparison.CurrentCultureIgnoreCase)
                 ? data
                     .Include(c => c.MembershipType)
                     .OrderByDescending(OrderByList(orderColm))
-                    .ToList()
-
                 : data
-                .Include(c => c.MembershipType)
-                .OrderBy(OrderByList(orderColm))
-                .ToList();
+                    .Include(c => c.MembershipType)
+                    .OrderBy(OrderByList(orderColm));
 
-             result = result            
+             var result = order
                 .Skip(pageIndex * pageSize)
-                .Take(pageSize).ToList();
-
-            
+                .Take(pageSize)
+                .ToList();
 
             return result;
         }
@@ -64,10 +63,10 @@ namespace VideoRentDAL.Persistence.Repositories
 
         private static Func<Customer, string> OrderByList(int colmIdx)
         {
-            if (colmIdx == 0) 
-                    return (c => c.Name);
-                        return (c => c.MembershipType.Name);
-         }
+            if (colmIdx == 0)
+                return (c => c.Name);
+            return (c => c.MembershipType.Name);
+        }
 
 
     }
