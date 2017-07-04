@@ -138,4 +138,7 @@
   <data name="SubscribedToNewsletter" xml:space="preserve">
     <value>Subscribed To Newsletter?</value>
   </data>
+  <data name="CustomerNameRequiredMessage" xml:space="preserve">
+    <value>Please enter Customer name.</value>
+  </data>
 </root>

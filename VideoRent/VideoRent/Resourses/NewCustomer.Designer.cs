@@ -70,6 +70,15 @@ namespace VideoRent.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please enter Customer name..
+        /// </summary>
+        public static string CustomerNameRequiredMessage {
+            get {
+                return ResourceManager.GetString("CustomerNameRequiredMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Day of birth.
         /// </summary>
         public static string Dayofbirth {

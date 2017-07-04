@@ -4,8 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using AutoMapper;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using VideoRent.Models;
 using VideoRent.Models.JsonDatatables;
 using VideoRent.ViewModels;

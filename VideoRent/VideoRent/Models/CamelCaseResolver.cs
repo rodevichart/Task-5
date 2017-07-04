@@ -8,9 +8,7 @@ using Newtonsoft.Json.Serialization;
 namespace VideoRent.Models
 {
     public class CamelCaseResolver : ActionResult
-    {
-        public int TotalRecords { get; set; }
-        public int RecordsSearched { get; set; }
+    {       
         public Encoding ContentEncoding { get; set; }
         public string ContentType { get; set; }
         public object Data { get; set; }

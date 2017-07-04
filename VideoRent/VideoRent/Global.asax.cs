@@ -12,7 +12,6 @@ namespace VideoRent
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            //Mapper.Initialize(c => c.AddProfile<MappingProfile>());
             Mapper.Initialize(c =>
             {
                 c.AddProfile<MappingProfileMVC>();

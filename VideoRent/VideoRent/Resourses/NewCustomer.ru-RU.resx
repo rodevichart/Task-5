@@ -118,4 +118,7 @@
   <data name="CreateCustomer" xml:space="preserve">
     <value>Новый Клиент</value>
   </data>
+  <data name="CustomerNameRequiredMessage" xml:space="preserve">
+    <value>Пожалуйста, введите имя клиента</value>
+  </data>
 </root>
