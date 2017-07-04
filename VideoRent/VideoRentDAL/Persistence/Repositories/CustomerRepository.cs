@@ -25,12 +25,15 @@ namespace VideoRentDAL.Persistence.Repositories
 
 
             if (!string.IsNullOrEmpty(search))
-                data = data.Where(c => c.Name.ToUpper().Contains(search.ToUpper())
-                || 
-                c.MembershipType.Name.ToUpper().Contains(search.ToUpper())
-                );
-
-            recordSearched = data.Count();
+            { 
+                 data = data.Where(c => c.Name.ToUpper().Contains(search.ToUpper())
+                 || 
+                  c.MembershipType.Name.ToUpper().Contains(search.ToUpper())
+                 );
+                recordSearched = data.Count();
+            }
+            else
+            recordSearched = totalRecords;
 
             var result = orderDir.ToUpper().Equals("DESC", StringComparison.CurrentCultureIgnoreCase)
                 ? data

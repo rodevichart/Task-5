@@ -14,20 +14,26 @@ namespace VideoRentDAL.Persistence.Repositories
         }
 
         public VideoRentContext VideoRentContext => Context as VideoRentContext;
+
         public IList<Movie> GetMovieWithGenre(string search, int orderColm, string orderDir, out int totalRecords,
-           out int recordSearched, int pageIndex = 1, int pageSize = 10)
+            out int recordSearched, int pageIndex = 1, int pageSize = 10)
         {
             var data = VideoRentContext.Movies.AsQueryable();
             totalRecords = data.Count();
 
 
             if (!string.IsNullOrEmpty(search))
+            {
                 data = data.Where(m => m.Name.ToUpper().Contains(search.ToUpper())
-                ||
-                m.Genre.Name.ToUpper().Contains(search.ToUpper())
-                );
+                                       ||
+                                       m.Genre.Name.ToUpper().Contains(search.ToUpper())
+                    );
 
-            recordSearched = data.Count();
+                recordSearched = data.Count();
+            }
+            else
+                recordSearched = totalRecords;
+
 
             var result = orderDir.ToUpper().Equals("DESC", StringComparison.CurrentCultureIgnoreCase)
                 ? data
@@ -36,13 +42,13 @@ namespace VideoRentDAL.Persistence.Repositories
                     .ToList()
 
                 : data
-                .Include(m => m.Genre)
-                .OrderBy(OrderByList(orderColm))
-                .ToList();
+                    .Include(m => m.Genre)
+                    .OrderBy(OrderByList(orderColm))
+                    .ToList();
 
             result = result
-               .Skip(pageIndex * pageSize)
-               .Take(pageSize).ToList();
+                .Skip(pageIndex*pageSize)
+                .Take(pageSize).ToList();
 
 
 
