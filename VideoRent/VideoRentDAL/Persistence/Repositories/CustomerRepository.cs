@@ -36,21 +36,21 @@ namespace VideoRentDAL.Persistence.Repositories
             else
                 recordSearched = totalRecords;
 
-            
 
-           var order = orderDir.ToUpper().Equals("DESC", StringComparison.CurrentCultureIgnoreCase)
+
+            var order = orderDir.ToUpper().Equals("DESC", StringComparison.CurrentCultureIgnoreCase)
                 ? data
                     .Include(c => c.MembershipType)
                     .OrderByDescending(OrderByList(orderColm))
                 : data
                     .Include(c => c.MembershipType)
                     .OrderBy(OrderByList(orderColm));
+    
 
              var result = order
                 .Skip(pageIndex * pageSize)
                 .Take(pageSize)
                 .ToList();
-
             return result;
         }
 
@@ -61,7 +61,7 @@ namespace VideoRentDAL.Persistence.Repositories
                 .SingleOrDefault(c => c.Id == id);
         }
 
-        private static Func<Customer, string> OrderByList(int colmIdx)
+        private static Expression<Func<Customer, string>> OrderByList(int colmIdx)
         {
             if (colmIdx == 0)
                 return (c => c.Name);

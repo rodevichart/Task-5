@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using VideoRentDAL.Core.Domain;
 using VideoRentDAL.Core.Repositories;
 
@@ -55,7 +56,7 @@ namespace VideoRentDAL.Persistence.Repositories
         }
 
 
-        private static Func<Movie, string> OrderByList(int colmIdx)
+        private static Expression<Func<Movie, string>> OrderByList(int colmIdx)
         {
             if (colmIdx == 0)
                 return (c => c.Name);
