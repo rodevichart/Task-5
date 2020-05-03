@@ -9,7 +9,7 @@ Was applied N-Layer architecture. AutoMapper for mapping objects from different 
 
 For Authentication and Authorization were used ASP.Net Identity. Also was implemented the Facebook Login feature. Depending on the role, your rights as a service user can both expand and be reduced.
 
-For Logging Unhandled Exceptions in DB were applied Elmah.
+For Logging Unhandled Exceptions and store them in DB were applied Elmah.
 For application optimization, real-time diagnostic, insights - Glimpse.
 
 To run app you need to setup IIS or to use IISExpress.
